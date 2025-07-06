@@ -228,7 +228,7 @@ class GlobalStyles:
         QWidget {
             font-family: 'Segoe UI', 'Ubuntu', sans-serif;
             font-size: 13px;
-            background-color: #f5f7fa;
+            
         }
         QPushButton {
             padding: 8px 14px;
