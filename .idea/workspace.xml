@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +56,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/FPOS/kpapython/kpa/database",
+    "last_opened_file_path": "C:/FPOS/kpapython/kpa/utils",
     "settings.editor.selected.configurable": "com.sourcegraph.cody.config.ui.CodyConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\FPOS\kpapython\kpa\utils" />
       <recent name="C:\FPOS\kpapython\kpa\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -116,7 +118,31 @@
       <option name="project" value="LOCAL" />
       <updated>1751823833328</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751825151162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751825151162</updated>
+    </task>
+    <task id="LOCAL-00003" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751825252634</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751825252634</updated>
+    </task>
+    <task id="LOCAL-00004" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751826718391</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751826718391</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

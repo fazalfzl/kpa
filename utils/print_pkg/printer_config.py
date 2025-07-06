@@ -38,9 +38,11 @@ class PrinterTester:
             print("ERROR in list_devices:", e)
             return []
 
-    def initialize_printer(self, idVendor, idProduct):
+    def initialize_printer(self, idVendor, idProduct , inputEndPoint, outputEndPoint):
         try:
-            self.p = printer.Usb(int(idVendor, 16), int(idProduct, 16))
+            self.p = printer.Usb(int(idVendor, 16), int(idProduct, 16),
+                                 in_ep=int(inputEndPoint, 16),
+                                 out_ep=int(outputEndPoint, 16))
             sleep(0.5)
             self.p.text("Hello World\n")
             self.p.cut()
@@ -64,15 +66,20 @@ class PrinterTester:
                 desc = str(dev)
                 vens = "0x" + desc.split("idVendor", 1)[1].split("0x")[1].split(" ")[0]
                 prods = "0x" + desc.split("idProduct", 1)[1].split("0x")[1].split(" ")[0]
+                invals = "0x" + desc.split("bEndpointAddress", 2)[1].split("0x")[1].split(" ")[0]
+                outvals = "0x" + desc.split("bEndpointAddress", 2)[2].split("0x")[1].split(" ")[0]
                 idVendor = self.stringtohex(vens)
                 idProduct = self.stringtohex(prods)
+                inputEndPoint = self.stringtohex(invals)
+                outputEndPoint = self.stringtohex(outvals)
 
                 print(f"🖨️ Found USB device: Vendor={idVendor}, Product={idProduct}")
-                self.initialize_printer(idVendor, idProduct)
+                self.initialize_printer(idVendor, idProduct , inputEndPoint, outputEndPoint)
                 if self.printer_initialized:
                     break
             except Exception as e:
                 print("⚠️ Error parsing device info:", e)
+
 
 
 if __name__ == "__main__":
