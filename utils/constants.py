@@ -56,7 +56,7 @@ WINDOW_CONTROL_FONT_SIZE = 16
 MAXIMIZE_BUTTON_FONT_SIZE = 14
 
 # App Title
-APP_TITLE = "FPOS - Fast Point of Sale"
+APP_TITLE = "FPOS - Fast Point of Sale !!!"
 
 # Placeholder Text
 BARCODE_PLACEHOLDER = "Scan barcode here..."
