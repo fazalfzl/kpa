@@ -189,7 +189,7 @@ class ActionButtons:
             try:
                 if not self.printer_tester.is_printer_initialized():
                     self.printer_tester.run()  # Initialize the printer if not already done
-                self.printer_tester.print_receipt(receipt_content, max_character)
+                self.printer_tester.print_receipt(receipt_content)
             except Exception as e:
                 print(f"❌ Failed to print receipt: {e}")
         else:

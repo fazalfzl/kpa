@@ -42,31 +42,50 @@ class PrinterTester:
     #         :param height: text height multiplier when custom_size is used, decimal range 1-8, *default*: 1
     #
 
-    def print_receipt(self, receipt_content, max_character):
+    def print_receipt(self, receipt_content):
         """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
             print("❌ Printer is not initialized. Cannot print.")
             return
 
         try:
-            self.p.set(bold=False, align='left', font=u'b', width=1, height=1)
+            # Set default text style
+            self.p.set(bold=False)
+            self.p.set(align='left')
+            self.p.set(font='b')
+            self.p.set(width=1)
+            self.p.set(height=1)
             sleep(0.2)
+
+            # Print the date and time
+            self.p.text(datetime.now().strftime("%Y-%m-%d \n%H:%M:%S\n"))
+            sleep(0.2)
+
+            # Set bold and centered for the header
+            self.p.set(bold=True)
+            self.p.set(align='center')
+            self.p.set(font='b')
+            self.p.set(width=2)
+            self.p.set(height=2)
+            sleep(0.2)
+
             # Print the bold header
-            self.p.text(
-                datetime.now().strftime("%Y-%m-%d \n %H:%M:%S"))
-
-            # give a delay for the printer to process the header
+            self.p.text("KPA STORES\n")
             sleep(0.2)
 
-            self.p.set(bold=True, align='center' , font='b', width=2, height=2)  # Set bold and centered
+            # Reset to normal text style
+            self.p.set(bold=False)
+            self.p.set(align='left')
+            self.p.set(font='b')
+            self.p.set(width=1)
+            self.p.set(height=1)
             sleep(0.2)
-            self.p.text("KPA STORES\n")  # Centered header
-            sleep(0.2)
-            self.p.set(bold=False, align='left', font='b', width=1, height=1)  # Reset to normal text
-            sleep(0.2)
+
             # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
             sleep(0.2)
+
+            # Cut the paper
             self.p.cut()
             print("✅ Receipt printed successfully with bold header.")
         except Exception as e:
