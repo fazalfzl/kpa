@@ -51,9 +51,13 @@ class PrinterTester:
         try:
             # Set default text style
             self.p.set(bold=False)
+            sleep(0.2)
             self.p.set(align='left')
+            sleep(0.2)
             self.p.set(font='a')
+            sleep(0.2)
             self.p.set(double_width=False)
+            sleep(0.2)
             self.p.set(double_height=False)
             sleep(0.2)
 
@@ -63,9 +67,13 @@ class PrinterTester:
 
             # Set bold and centered for the header
             self.p.set(bold=True)
+            sleep(0.2)
             self.p.set(align='center')
+            sleep(0.2)
             self.p.set(font='a')
+            sleep(0.2)
             self.p.set(double_width=True)
+            sleep(0.2)
             self.p.set(double_height=True)
             sleep(0.2)
 
@@ -75,9 +83,13 @@ class PrinterTester:
 
             # Reset to normal text style
             self.p.set(bold=False)
+            sleep(0.2)
             self.p.set(align='left')
+            sleep(0.2)
             self.p.set(font='a')
+            sleep(0.2)
             self.p.set(double_width=False)
+            sleep(0.2)
             self.p.set(double_height=False)
             sleep(0.2)
 
