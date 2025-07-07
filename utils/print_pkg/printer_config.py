@@ -49,7 +49,7 @@ class PrinterTester:
             return
 
         try:
-            self.p._raw(b'\x1B\x40')
+            self.p._raw(b'\x1B\x40')  # Reset printer
             # Set default text style
             self.p._raw(b'\x1b\x45\x00')  # Disable bold
             self.p._raw(b'\x1b\x61\x00')  # Align left
@@ -60,24 +60,21 @@ class PrinterTester:
             self.p.text(datetime.now().strftime("%Y-%m-%d \n%H:%M:%S\n"))
             sleep(0.2)
 
-            # Set bold and centered for the header
+            # Set bold and centered for the header, with Font B
             self.p._raw(b'\x1b\x45\x01')  # Enable bold
             self.p._raw(b'\x1b\x61\x01')  # Align center
-            self.p._raw(b'\x1b\x21\x30')  # Font A, double width, double height
+            self.p._raw(b'\x1b\x21\x31')  # Font B, double width, double height
             sleep(0.2)
 
-            # Print the bold header
+            # Print the bold header with Font B
             self.p.text("KPA STORES\n")
             sleep(0.2)
 
             # Reset to normal text style
-
-            self.p._raw(b'\x1B\x40')
-            # Set default text style
+            self.p._raw(b'\x1B\x40')  # Reset printer
             self.p._raw(b'\x1b\x45\x00')  # Disable bold
             self.p._raw(b'\x1b\x61\x00')  # Align left
             self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
-
             sleep(0.2)
 
             # Print the rest of the receipt
@@ -86,9 +83,10 @@ class PrinterTester:
 
             # Cut the paper
             self.p.cut()
-            print("✅ Receipt printed successfully with bold header.")
+            print("✅ Receipt printed successfully with bold header in Font B.")
         except Exception as e:
             print(f"❌ Failed to print receipt: {e}")
+
 
     def stringtohex(self, strin):
         try:
