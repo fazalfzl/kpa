@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from PyQt5.QtWidgets import QPushButton, QLabel
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
@@ -141,32 +143,45 @@ class ActionButtons:
             total = self.billing_list.get_current_customer_total()
             self.bill_amount_label.setText(f"BILL AMOUNT\n{total:.2f}")
 
+    from datetime import datetime
+
     def process_bill(self):
         """Handle bill processing and print a receipt"""
-        max_character = 46  # Maximum characters per line (adjustable for testing)
+        max_character = 40  # Maximum characters per line
+        max_name_length = 15  # Maximum length for product name
+        max_price_length = 8  # Maximum length for price
+        max_qty_length = 4  # Maximum length for quantity
+        max_amt_length = 8  # Maximum length for amount
 
         if self.billing_list is not None:
             total = self.billing_list.get_current_customer_total()
             items = self.billing_list.get_current_customer_items()
             customer = self.billing_list.get_current_customer()
 
+            # Get current date and time
+            now = datetime.now()
+            date_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
             # Format the receipt
             receipt_lines = []
-            receipt_lines.append("RECEIPT".center(max_character, "-"))
+            receipt_lines.append(date_time.center(max_character))  # Centered date and time
+            receipt_lines.append("-" * max_character)
             receipt_lines.append(f"Customer: {customer}".ljust(max_character))
             receipt_lines.append("-" * max_character)
-            receipt_lines.append(f"{'No.':<4}{'Name':<16}{'Price':<8}{'Qty':<4}{'Amt':<8}")
+            receipt_lines.append(
+                f"{'No.':<4}{'Name':<{max_name_length}}{'Price':<{max_price_length}}{'Qty':<{max_qty_length}}{'Amt':<{max_amt_length}}")
             receipt_lines.append("-" * max_character)
 
             for idx, item in enumerate(items, start=1):
-                name = item.item_name[:15]  # Truncate name to fit
-                price = f"{item.price:.2f}"
-                qty = f"{item.qty}"
-                amount = f"{item.total():.2f}"
-                receipt_lines.append(f"{idx:<4}{name:<16}{price:<8}{qty:<4}{amount:<8}")
+                name = item.item_name[:max_name_length]  # Truncate name to fit
+                price = f"{item.price:.2f}"[:max_price_length]  # Truncate price
+                qty = f"{item.qty}"[:max_qty_length]  # Truncate quantity
+                amount = f"{item.total():.2f}"[:max_amt_length]  # Truncate amount
+                receipt_lines.append(
+                    f"{idx:<4}{name:<{max_name_length}}{price:<{max_price_length}}{qty:<{max_qty_length}}{amount:<{max_amt_length}}")
 
             receipt_lines.append("-" * max_character)
-            receipt_lines.append(f"{'TOTAL:':<32}{total:.2f}".rjust(max_character))
+            receipt_lines.append(f"{'TOTAL:':<{max_character - 8}}{total:.2f}".rjust(max_character))
             receipt_lines.append("-" * max_character)
 
             # Join the receipt lines

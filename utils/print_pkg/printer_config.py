@@ -33,17 +33,23 @@ class PrinterTester:
             print("❌ Printer initialization failed:", e)
 
     def print_receipt(self, receipt_content):
-        """Print the receipt using the initialized printer."""
+        """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
             print("❌ Printer is not initialized. Cannot print.")
             return
 
         try:
+            # Print the bold header
+            self.p.set(bold=True)  # Enable bold text
+            self.p.text("KPA STORES\n".center(40))  # Print the bold headline
+            self.p.set(bold=False)  # Disable bold text
+
+            # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
             self.p.cut()
-            print("✅ Receipt printed successfully.")
+            print("✅ Receipt printed successfully with bold header.")
         except Exception as e:
-            print("❌ Failed to print receipt:", e)
+            print(f"❌ Failed to print receipt: {e}")
 
     def stringtohex(self, strin):
         try:
