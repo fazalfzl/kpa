@@ -49,25 +49,44 @@ class PrinterTester:
             return
 
         try:
-            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
+            # Set default text style
+            self.p.set(custom_size=True)
+            self.p.set(bold=False)
+            self.p.set(align='left')
+            self.p.set(font='b')
+            self.p.set(width=1)
+            self.p.set(height=1)
             sleep(0.2)
+
+            # Print the date and time
+            self.p.text(datetime.now().strftime("%Y-%m-%d \n%H:%M:%S\n"))
+            sleep(0.2)
+
+            # Set bold and centered for the header
+            self.p.set(bold=True)
+            self.p.set(align='center')
+            self.p.set(font='b')
+            self.p.set(width=2)
+            self.p.set(height=2)
+            sleep(0.2)
+
             # Print the bold header
-            self.p.text(
-                datetime.now().strftime("%Y-%m-%d \n %H:%M:%S"))
-
-            # give a delay for the printer to process the header
+            self.p.text("KPA STORES\n")
             sleep(0.2)
 
-            self.p.set(bold=True, double_width=True, double_height=True, align='center'
-                       )  # Enable bold text and double size
+            # Reset to normal text style
+            self.p.set(bold=False)
+            self.p.set(align='left')
+            self.p.set(font='b')
+            self.p.set(width=1)
+            self.p.set(height=1)
             sleep(0.2)
-            self.p.text("KPA STORES\n")  # Centered header
-            sleep(0.2)
-            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
-            sleep(0.2)
-             # Print the rest of the receipt
+
+            # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
             sleep(0.2)
+
+            # Cut the paper
             self.p.cut()
             print("✅ Receipt printed successfully with bold header.")
         except Exception as e:
