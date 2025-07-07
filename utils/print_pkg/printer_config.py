@@ -53,8 +53,8 @@ class PrinterTester:
             self.p.set(bold=False)
             self.p.set(align='left')
             self.p.set(font='a')
-            self.p.set(width=1)
-            self.p.set(height=1)
+            self.p.set(double_width=False)
+            self.p.set(double_height=False)
             sleep(0.2)
 
             # Print the date and time
@@ -65,8 +65,8 @@ class PrinterTester:
             self.p.set(bold=True)
             self.p.set(align='center')
             self.p.set(font='a')
-            self.p.set(width=2)
-            self.p.set(height=2)
+            self.p.set(double_width=True)
+            self.p.set(double_height=True)
             sleep(0.2)
 
             # Print the bold header
@@ -77,8 +77,8 @@ class PrinterTester:
             self.p.set(bold=False)
             self.p.set(align='left')
             self.p.set(font='a')
-            self.p.set(width=1)
-            self.p.set(height=1)
+            self.p.set(double_width=False)
+            self.p.set(double_height=False)
             sleep(0.2)
 
             # Print the rest of the receipt
