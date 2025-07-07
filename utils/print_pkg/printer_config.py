@@ -81,6 +81,7 @@ class PrinterTester:
             self.p._raw(b'\x1b\x45\x01')  # Enable bold
             self.p._raw(b'\x1b\x61\x01')  # Align center
             self.p._raw(b'\x1b\x21\x31')  # Font B, double width, double height
+            self.p.text(f"TOTAL: {total:.2f}\n")
 
             # Cut the paper
             self.p.cut()
