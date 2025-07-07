@@ -49,16 +49,11 @@ class PrinterTester:
             return
 
         try:
+            self.p._raw(b'\x1B\x40')
             # Set default text style
-            self.p.set(bold=False)
-            sleep(0.2)
-            self.p.set(align='left')
-            sleep(0.2)
-            self.p.set(font='a')
-            sleep(0.2)
-            self.p.set(double_width=False)
-            sleep(0.2)
-            self.p.set(double_height=False)
+            self.p._raw(b'\x1b\x45\x00')  # Disable bold
+            self.p._raw(b'\x1b\x61\x00')  # Align left
+            self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
             sleep(0.2)
 
             # Print the date and time
@@ -66,15 +61,9 @@ class PrinterTester:
             sleep(0.2)
 
             # Set bold and centered for the header
-            self.p.set(bold=True)
-            sleep(0.2)
-            self.p.set(align='center')
-            sleep(0.2)
-            self.p.set(font='a')
-            sleep(0.2)
-            self.p.set(double_width=True)
-            sleep(0.2)
-            self.p.set(double_height=True)
+            self.p._raw(b'\x1b\x45\x01')  # Enable bold
+            self.p._raw(b'\x1b\x61\x01')  # Align center
+            self.p._raw(b'\x1b\x21\x30')  # Font A, double width, double height
             sleep(0.2)
 
             # Print the bold header
@@ -82,15 +71,13 @@ class PrinterTester:
             sleep(0.2)
 
             # Reset to normal text style
-            self.p.set(bold=False)
-            sleep(0.2)
-            self.p.set(align='left')
-            sleep(0.2)
-            self.p.set(font='a')
-            sleep(0.2)
-            self.p.set(double_width=False)
-            sleep(0.2)
-            self.p.set(double_height=False)
+
+            self.p._raw(b'\x1B\x40')
+            # Set default text style
+            self.p._raw(b'\x1b\x45\x00')  # Disable bold
+            self.p._raw(b'\x1b\x61\x00')  # Align left
+            self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
+
             sleep(0.2)
 
             # Print the rest of the receipt
