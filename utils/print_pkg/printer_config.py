@@ -42,7 +42,7 @@ class PrinterTester:
     #         :param height: text height multiplier when custom_size is used, decimal range 1-8, *default*: 1
     #
 
-    def print_receipt(self, receipt_content, max_character):
+    def print_receipt(self, receipt_content):
         """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
             print("❌ Printer is not initialized. Cannot print.")
