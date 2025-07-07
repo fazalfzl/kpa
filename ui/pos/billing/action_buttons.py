@@ -178,7 +178,7 @@ class ActionButtons:
                 tester.run()
                 tester.p.text(receipt_content + "\n")
                 tester.p.cut()
-                tester.p.cleanup()
+                tester.cleanup()
                 print("✅ Receipt printed successfully.")
             except Exception as e:
                 print(f"❌ Failed to print receipt: {e}")
