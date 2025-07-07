@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import (
 from ui.pos.edit_product_dialog import ProductEditorDialog
 from ui.pos.order_products_dialog import OrderProductsDialog
 from ui.pos.product_management_dialog import ProductManagementDialog
+from utils.print_pkg.printer_config import PrinterTester
 from utils.styles import (
     TitleBarStyles, CategoryButtonStyles, BarcodeInputStyles, TitleLabelStyles
 )
@@ -174,9 +175,19 @@ class CustomTitleBar(QWidget):
         about_action.triggered.connect(lambda: print("About clicked"))
         menu.addAction(about_action)
 
+        # Add Test Printer option
+        test_printer_action = QAction("🖨️ Test Printer", self)
+        test_printer_action.triggered.connect(self._test_printer)
+        menu.addAction(test_printer_action)
+
         # Show menu below the menu button
         pos = self.menu_btn.mapToGlobal(QPoint(0, self.menu_btn.height()))
         menu.exec_(pos)
+
+    def _test_printer(self):
+        """Test the printer by printing 'Hello World'."""
+        tester = PrinterTester()
+        tester.run()
 
     def _open_product_management(self):
         dlg = ProductManagementDialog(self.parent)
