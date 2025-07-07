@@ -49,7 +49,7 @@ class PrinterTester:
             return
 
         try:
-            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
+            self.p.set(bold=False, align='left', font=u'b', width=1, height=1)
             sleep(0.2)
             # Print the bold header
             self.p.text(
@@ -58,14 +58,13 @@ class PrinterTester:
             # give a delay for the printer to process the header
             sleep(0.2)
 
-            self.p.set(bold=True, double_width=True, double_height=True, align='center'
-                       )  # Enable bold text and double size
+            self.p.set(bold=True, align='center' , font='b', width=2, height=2)  # Set bold and centered
             sleep(0.2)
             self.p.text("KPA STORES\n")  # Centered header
             sleep(0.2)
-            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
+            self.p.set(bold=False, align='left', font='b', width=1, height=1)  # Reset to normal text
             sleep(0.2)
-             # Print the rest of the receipt
+            # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
             sleep(0.2)
             self.p.cut()
