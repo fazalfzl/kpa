@@ -50,7 +50,6 @@ class PrinterTester:
 
         try:
             # Set default text style
-            self.p.set(custom_size=True)
             self.p.set(bold=False)
             self.p.set(align='left')
             self.p.set(font='b')
