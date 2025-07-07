@@ -13,6 +13,38 @@ class PrinterTester:
         self.printer_initialized = False
         self.device = None
 
+    def is_printer_initialized(self):
+        """Check if the printer is already initialized."""
+        return self.printer_initialized and self.p is not None
+
+    def initialize_printer(self, idVendor, idProduct, inputEndPoint, outputEndPoint):
+        if self.is_printer_initialized():
+            print("✅ Printer is already initialized.")
+            return
+
+        try:
+            self.p = printer.Usb(int(idVendor, 16), int(idProduct, 16),
+                                 in_ep=int(inputEndPoint, 16),
+                                 out_ep=int(outputEndPoint, 16))
+            sleep(0.5)
+            self.printer_initialized = True
+            print("✅ Printer initialized.")
+        except Exception as e:
+            print("❌ Printer initialization failed:", e)
+
+    def print_receipt(self, receipt_content):
+        """Print the receipt using the initialized printer."""
+        if not self.is_printer_initialized():
+            print("❌ Printer is not initialized. Cannot print.")
+            return
+
+        try:
+            self.p.text(receipt_content + "\n")
+            self.p.cut()
+            print("✅ Receipt printed successfully.")
+        except Exception as e:
+            print("❌ Failed to print receipt:", e)
+
     def stringtohex(self, strin):
         try:
             return hex(int(strin.strip(), 16))
@@ -38,16 +70,6 @@ class PrinterTester:
             print("ERROR in list_devices:", e)
             return []
 
-    def initialize_printer(self, idVendor, idProduct, inputEndPoint, outputEndPoint):
-        try:
-            self.p = printer.Usb(int(idVendor, 16), int(idProduct, 16),
-                                 in_ep=int(inputEndPoint, 16),
-                                 out_ep=int(outputEndPoint, 16))
-            sleep(0.5)
-            self.printer_initialized = True
-            print("✅ Printer initialized.")
-        except Exception as e:
-            print("❌ Printer initialization failed:", e)
 
     def test_printer(self):
         if not self.printer_initialized:

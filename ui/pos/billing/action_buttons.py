@@ -11,6 +11,7 @@ class ActionButtons:
         self.buttons = {}
         self.billing_list = None
         self.current_customer = "C1"  # Track current customer
+        self.printer_tester = PrinterTester()  # Single instance of PrinterTester
 
     def set_billing_list(self, billing_list):
         """Set the billing list reference for adding items"""
@@ -142,6 +143,8 @@ class ActionButtons:
 
     def process_bill(self):
         """Handle bill processing and print a receipt"""
+        max_character = 46  # Maximum characters per line (adjustable for testing)
+
         if self.billing_list is not None:
             total = self.billing_list.get_current_customer_total()
             items = self.billing_list.get_current_customer_items()
@@ -149,11 +152,11 @@ class ActionButtons:
 
             # Format the receipt
             receipt_lines = []
-            receipt_lines.append("RECEIPT".center(40, "-"))
-            receipt_lines.append(f"Customer: {customer}".ljust(40))
-            receipt_lines.append("-" * 40)
+            receipt_lines.append("RECEIPT".center(max_character, "-"))
+            receipt_lines.append(f"Customer: {customer}".ljust(max_character))
+            receipt_lines.append("-" * max_character)
             receipt_lines.append(f"{'No.':<4}{'Name':<16}{'Price':<8}{'Qty':<4}{'Amt':<8}")
-            receipt_lines.append("-" * 40)
+            receipt_lines.append("-" * max_character)
 
             for idx, item in enumerate(items, start=1):
                 name = item.item_name[:15]  # Truncate name to fit
@@ -162,9 +165,9 @@ class ActionButtons:
                 amount = f"{item.total():.2f}"
                 receipt_lines.append(f"{idx:<4}{name:<16}{price:<8}{qty:<4}{amount:<8}")
 
-            receipt_lines.append("-" * 40)
-            receipt_lines.append(f"{'TOTAL:':<32}{total:.2f}".rjust(40))
-            receipt_lines.append("-" * 40)
+            receipt_lines.append("-" * max_character)
+            receipt_lines.append(f"{'TOTAL:':<32}{total:.2f}".rjust(max_character))
+            receipt_lines.append("-" * max_character)
 
             # Join the receipt lines
             receipt_content = "\n".join(receipt_lines)
@@ -174,12 +177,9 @@ class ActionButtons:
             print(receipt_content)  # For debugging purposes
 
             try:
-                tester = PrinterTester()
-                tester.run()
-                tester.p.text(receipt_content + "\n")
-                tester.p.cut()
-                tester.cleanup()
-                print("✅ Receipt printed successfully.")
+                if not self.printer_tester.is_printer_initialized():
+                    self.printer_tester.run()  # Initialize the printer if not already done
+                self.printer_tester.print_receipt(receipt_content)
             except Exception as e:
                 print(f"❌ Failed to print receipt: {e}")
         else:
