@@ -147,8 +147,8 @@ class ActionButtons:
 
     def process_bill(self):
         """Handle bill processing and print a receipt"""
-        max_character = 40  # Maximum characters per line
-        max_name_length = 15  # Maximum length for product name
+        max_character = 48  # Maximum characters per line
+        max_name_length = 23  # Maximum length for product name
         max_price_length = 8  # Maximum length for price
         max_qty_length = 4  # Maximum length for quantity
         max_amt_length = 8  # Maximum length for amount

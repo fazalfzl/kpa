@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change afterPath="$PROJECT_DIR$/three.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -334,7 +333,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751871493190</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751871878175</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1751871878175</updated>
+    </task>
+    <task id="LOCAL-00030" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751872002449</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1751872002449</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
