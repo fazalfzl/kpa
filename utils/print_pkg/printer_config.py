@@ -49,22 +49,25 @@ class PrinterTester:
             return
 
         try:
+            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
+            sleep(0.2)
             # Print the bold header
             self.p.text(
                 datetime.now().strftime("%Y-%m-%d \n %H:%M:%S"))
 
             # give a delay for the printer to process the header
-            sleep(0.5)
+            sleep(0.2)
 
             self.p.set(bold=True, double_width=True, double_height=True, align='center'
                        )  # Enable bold text and double size
-            sleep(0.5)
+            sleep(0.2)
             self.p.text("KPA STORES\n")  # Centered header
-            sleep(0.5)
-            self.p.set(bold=False, double_width=False, double_height=False)  # Reset to normal text
-            sleep(0.5)
+            sleep(0.2)
+            self.p.set(bold=False, double_width=False, double_height=False,align='left')  # Reset to normal text
+            sleep(0.2)
              # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
+            sleep(0.2)
             self.p.cut()
             print("✅ Receipt printed successfully with bold header.")
         except Exception as e:
