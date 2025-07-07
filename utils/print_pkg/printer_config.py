@@ -1,4 +1,6 @@
 import platform
+from datetime import datetime
+
 import usb.core
 import usb.util
 from time import sleep
@@ -6,6 +8,7 @@ from escpos import printer
 
 USBTMC_bInterfaceClass = 7
 USBTMC_bInterfaceSubClass = 1
+
 
 class PrinterTester:
     def __init__(self):
@@ -32,7 +35,14 @@ class PrinterTester:
         except Exception as e:
             print("❌ Printer initialization failed:", e)
 
-    def print_receipt(self, receipt_content):
+    # def set(self, align='left', font='a', bold=False, underline=0, width=1,
+    #         height=1, density=9, invert=False, smooth=False, flip=False,
+    #         double_width=False, double_height=False, custom_size=False):
+    #    :param width: text width multiplier when custom_size is used, decimal range 1-8,  *default*: 1
+    #         :param height: text height multiplier when custom_size is used, decimal range 1-8, *default*: 1
+    #
+
+    def print_receipt(self, receipt_content, max_character):
         """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
             print("❌ Printer is not initialized. Cannot print.")
@@ -40,11 +50,15 @@ class PrinterTester:
 
         try:
             # Print the bold header
-            self.p.set(bold=True)  # Enable bold text
-            self.p.text("KPA STORES\n".center(40))  # Print the bold headline
-            self.p.set(bold=False)  # Disable bold text
+            self.p.text(
+                datetime.now().strftime("%Y-%m-%d \n %H:%M:%S"))
 
-            # Print the rest of the receipt
+
+            self.p.set(bold=True, double_width=True, double_height=True, align='center'
+                       )  # Enable bold text and double size
+            self.p.text("KPA STORES\n")  # Centered header
+            self.p.set(bold=False, double_width=False, double_height=False)  # Reset to normal text
+             # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
             self.p.cut()
             print("✅ Receipt printed successfully with bold header.")
@@ -63,8 +77,8 @@ class PrinterTester:
             try:
                 for cfg in dev:
                     d = usb.util.find_descriptor(cfg,
-                        bInterfaceClass=USBTMC_bInterfaceClass,
-                        bInterfaceSubClass=USBTMC_bInterfaceSubClass)
+                                                 bInterfaceClass=USBTMC_bInterfaceClass,
+                                                 bInterfaceSubClass=USBTMC_bInterfaceSubClass)
                     return d is not None
             except Exception as e:
                 print("ERROR in is_usbtmc_device:", e)
@@ -75,7 +89,6 @@ class PrinterTester:
         except Exception as e:
             print("ERROR in list_devices:", e)
             return []
-
 
     def test_printer(self):
         if not self.printer_initialized:

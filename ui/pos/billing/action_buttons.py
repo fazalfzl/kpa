@@ -158,13 +158,8 @@ class ActionButtons:
             items = self.billing_list.get_current_customer_items()
             customer = self.billing_list.get_current_customer()
 
-            # Get current date and time
-            now = datetime.now()
-            date_time = now.strftime("%Y-%m-%d %H:%M:%S")
-
             # Format the receipt
             receipt_lines = []
-            receipt_lines.append(date_time.center(max_character))  # Centered date and time
             receipt_lines.append("-" * max_character)
             receipt_lines.append(f"Customer: {customer}".ljust(max_character))
             receipt_lines.append("-" * max_character)
@@ -194,7 +189,7 @@ class ActionButtons:
             try:
                 if not self.printer_tester.is_printer_initialized():
                     self.printer_tester.run()  # Initialize the printer if not already done
-                self.printer_tester.print_receipt(receipt_content)
+                self.printer_tester.print_receipt(receipt_content, max_character)
             except Exception as e:
                 print(f"❌ Failed to print receipt: {e}")
         else:
