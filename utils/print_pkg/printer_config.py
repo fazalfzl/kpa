@@ -44,12 +44,22 @@ class PrinterTester:
                                  in_ep=int(inputEndPoint, 16),
                                  out_ep=int(outputEndPoint, 16))
             sleep(0.5)
-            self.p.text("Hello World\n")
-            self.p.cut()
             self.printer_initialized = True
             print("✅ Printer initialized and Hello World printed.")
         except Exception as e:
             print("❌ Printer initialization failed:", e)
+
+    def test_printer(self):
+        if not self.printer_initialized:
+            print("❌ Printer is not initialized.")
+            return
+
+        try:
+            self.p.text("Hello World\n")
+            self.p.cut()
+            print("✅ Hello World printed successfully.")
+        except Exception as e:
+            print("❌ Failed to print Hello World:", e)
 
     def run(self):
         if platform.system() == 'Windows':

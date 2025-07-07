@@ -175,6 +175,7 @@ class ActionButtons:
 
             try:
                 tester = PrinterTester()
+                tester.run()
                 tester.p.text(receipt_content + "\n")
                 tester.p.cut()
                 print("✅ Receipt printed successfully.")

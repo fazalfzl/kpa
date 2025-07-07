@@ -188,6 +188,7 @@ class CustomTitleBar(QWidget):
         """Test the printer by printing 'Hello World'."""
         tester = PrinterTester()
         tester.run()
+        tester.test_printer()
 
     def _open_product_management(self):
         dlg = ProductManagementDialog(self.parent)
