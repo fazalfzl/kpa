@@ -42,7 +42,7 @@ class PrinterTester:
     #         :param height: text height multiplier when custom_size is used, decimal range 1-8, *default*: 1
     #
 
-    def print_receipt(self, receipt_content):
+    def print_receipt(self, receipt_content ,total):
         """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
             print("❌ Printer is not initialized. Cannot print.")
@@ -54,33 +54,33 @@ class PrinterTester:
             self.p._raw(b'\x1b\x45\x00')  # Disable bold
             self.p._raw(b'\x1b\x61\x00')  # Align left
             self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
-            sleep(0.2)
 
             # Print the date and time
             self.p.text(datetime.now().strftime("%Y-%m-%d \n%H:%M:%S\n"))
-            sleep(0.2)
 
             # Set bold and centered for the header, with Font B
             self.p._raw(b'\x1b\x45\x01')  # Enable bold
             self.p._raw(b'\x1b\x61\x01')  # Align center
             self.p._raw(b'\x1b\x21\x31')  # Font B, double width, double height
-            sleep(0.2)
 
             # Print the bold header with Font B
             self.p._raw(b'\x1b\x61\x01')  # Align center
             self.p.image('three.jpg')  # Path to the image
-            sleep(0.2)
 
             # Reset to normal text style
             self.p._raw(b'\x1B\x40')  # Reset printer
             self.p._raw(b'\x1b\x45\x00')  # Disable bold
             self.p._raw(b'\x1b\x61\x00')  # Align left
             self.p._raw(b'\x1b\x21\x10')  # Font A, no double width, double height
-            sleep(0.2)
 
             # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
-            sleep(0.2)
+
+            # Print the total amount
+            # bold , centered, Font B
+            self.p._raw(b'\x1b\x45\x01')  # Enable bold
+            self.p._raw(b'\x1b\x61\x01')  # Align center
+            self.p._raw(b'\x1b\x21\x31')  # Font B, double width, double height
 
             # Cut the paper
             self.p.cut()

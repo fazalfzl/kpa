@@ -176,8 +176,8 @@ class ActionButtons:
                     f"{idx:<4}{name:<{max_name_length}}{price:<{max_price_length}}{qty:<{max_qty_length}}{amount:<{max_amt_length}}")
 
             receipt_lines.append("-" * max_character)
-            receipt_lines.append(f"{'TOTAL:':<{max_character - 8}}{total:.2f}".rjust(max_character))
-            receipt_lines.append("-" * max_character)
+            # receipt_lines.append(f"{'TOTAL:':<{max_character - 8}}{total:.2f}".rjust(max_character))
+            # receipt_lines.append("-" * max_character)
 
             # Join the receipt lines
             receipt_content = "\n".join(receipt_lines)
@@ -189,7 +189,7 @@ class ActionButtons:
             try:
                 if not self.printer_tester.is_printer_initialized():
                     self.printer_tester.run()  # Initialize the printer if not already done
-                self.printer_tester.print_receipt(receipt_content)
+                self.printer_tester.print_receipt(receipt_content,total=total)
             except Exception as e:
                 print(f"❌ Failed to print receipt: {e}")
         else:
