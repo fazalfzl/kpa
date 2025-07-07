@@ -68,7 +68,7 @@ class PrinterTester:
 
             # Print the bold header with Font B
             self.p._raw(b'\x1b\x61\x01')  # Align center
-            self.p.image('/three.jpg')  # Path to the image
+            self.p.image('three.jpg')  # Path to the image
             sleep(0.2)
 
             # Reset to normal text style
