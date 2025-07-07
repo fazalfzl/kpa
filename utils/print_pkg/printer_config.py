@@ -4,7 +4,6 @@ import usb.util
 from time import sleep
 from escpos import printer
 
-# USB Printer class constants
 USBTMC_bInterfaceClass = 7
 USBTMC_bInterfaceSubClass = 1
 
@@ -12,6 +11,7 @@ class PrinterTester:
     def __init__(self):
         self.p = None
         self.printer_initialized = False
+        self.device = None
 
     def stringtohex(self, strin):
         try:
@@ -38,14 +38,14 @@ class PrinterTester:
             print("ERROR in list_devices:", e)
             return []
 
-    def initialize_printer(self, idVendor, idProduct , inputEndPoint, outputEndPoint):
+    def initialize_printer(self, idVendor, idProduct, inputEndPoint, outputEndPoint):
         try:
             self.p = printer.Usb(int(idVendor, 16), int(idProduct, 16),
                                  in_ep=int(inputEndPoint, 16),
                                  out_ep=int(outputEndPoint, 16))
             sleep(0.5)
             self.printer_initialized = True
-            print("✅ Printer initialized and Hello World printed.")
+            print("✅ Printer initialized.")
         except Exception as e:
             print("❌ Printer initialization failed:", e)
 
@@ -60,6 +60,25 @@ class PrinterTester:
             print("✅ Hello World printed successfully.")
         except Exception as e:
             print("❌ Failed to print Hello World:", e)
+        finally:
+            self.cleanup()
+
+    def cleanup(self):
+        """Release USB resources and reset the printer."""
+        if self.p:
+            try:
+                self.p.close()
+            except Exception as e:
+                print("⚠️ Error closing printer:", e)
+        if self.device:
+            try:
+                usb.util.dispose_resources(self.device)
+                print("✅ USB resources released.")
+            except Exception as e:
+                print("⚠️ Error releasing USB resources:", e)
+        self.p = None
+        self.device = None
+        self.printer_initialized = False
 
     def run(self):
         if platform.system() == 'Windows':
@@ -84,14 +103,9 @@ class PrinterTester:
                 outputEndPoint = self.stringtohex(outvals)
 
                 print(f"🖨️ Found USB device: Vendor={idVendor}, Product={idProduct}")
-                self.initialize_printer(idVendor, idProduct , inputEndPoint, outputEndPoint)
+                self.device = dev
+                self.initialize_printer(idVendor, idProduct, inputEndPoint, outputEndPoint)
                 if self.printer_initialized:
                     break
             except Exception as e:
                 print("⚠️ Error parsing device info:", e)
-
-
-
-if __name__ == "__main__":
-    tester = PrinterTester()
-    tester.run()
