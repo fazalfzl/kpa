@@ -53,8 +53,8 @@ class PrinterTester:
             self.p.set(bold=False)
             self.p.set(align='left')
             self.p.set(font='a')
-            self.p.set(width=1)
-            self.p.set(height=1)
+            self.p.set(width=.5)
+            self.p.set(height=.5)
             sleep(0.2)
 
             # Print the date and time
@@ -77,8 +77,8 @@ class PrinterTester:
             self.p.set(bold=False)
             self.p.set(align='left')
             self.p.set(font='a')
-            self.p.set(width=1)
-            self.p.set(height=1)
+            self.p.set(width=.5)
+            self.p.set(height=.5)
             sleep(0.2)
 
             # Print the rest of the receipt
