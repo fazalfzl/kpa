@@ -4,7 +4,7 @@ class ColorPalette:
     BASE_BG = "#f5f9ff"
     PRIMARY = "#0ea5e9"
     PRIMARY_DARK = "#0284c7"
-    PRIMARY_LIGHT = "#e0f7ff"
+    PRIMARY_LIGHT = "#c0eaff"
     ACCENT = "#ffffff"
     TEXT = "#1e293b"
     BORDER = "#cbd5e1"
@@ -15,8 +15,8 @@ class ColorPalette:
 class ProductButtonStyles:
     BUTTON_STYLE = f"""
         QToolButton {{
-            background-color: {ColorPalette.PRIMARY};
-            border: 5px solid {ColorPalette.PRIMARY};
+            background-color: {ColorPalette.PRIMARY_LIGHT};
+            border: 2px solid {ColorPalette.PRIMARY};
             border-radius: 6px;
             padding: 8px;
             font-weight: bold;
