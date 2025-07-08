@@ -63,9 +63,10 @@ class GlobalStyles:
         }}
         QScrollBar:vertical, QScrollBar:horizontal {{
             background: transparent;
+            min-width: 70px;
         }}
         QScrollBar::handle:vertical, QScrollBar::handle:horizontal {{
-            background-color: {ColorPalette.PRIMARY_LIGHT};
+            background-color: {ColorPalette.PRIMARY};
             border-radius: 6px;
             min-height: 20px;
             min-width: 20px;
