@@ -3,15 +3,15 @@ from utils.constants import PRODUCT_BUTTON_FONT_SIZE
 
 
 class ColorPalette:
-    BASE_BG = "#f5f9ff"
-    PRIMARY = "#0ea5e9"
-    PRIMARY_DARK = "#0284c7"
-    PRIMARY_LIGHT = "#c0eaff"
-    ACCENT = "#ffffff"
-    TEXT = "#1e293b"
-    BORDER = "#cbd5e1"
-    HOVER = "#e2e8f0"
-    PRESSED = "#cbd5e1"
+    BASE_BG = "#e6f0fa"  # Softer blue background
+    PRIMARY = "#007acc"  # Deeper blue (clear on all desktops)
+    PRIMARY_DARK = "#005f99"  # Strong hover/active shade
+    PRIMARY_LIGHT = "#b3dcf5"  # Noticeable light blue (visible on Lubuntu)
+    ACCENT = "#f8f9fa"  # Soft off-white
+    TEXT = "#0f172a"  # High-contrast dark blue-gray
+    BORDER = "#94a3b8"  # Subtle border shade
+    HOVER = "#dceaf7"  # Light blue hover
+    PRESSED = "#bfdcf0"  # Click state
 
 
 class ProductButtonStyles:
