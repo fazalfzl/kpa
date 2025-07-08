@@ -5,46 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change afterPath="$PROJECT_DIR$/core/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/bill.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/folder structure creator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/action_buttons_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/action_buttons_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_keypad_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_keypad_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_list_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_list_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_section_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/billing/billing_section_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/custom_title_bar_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/custom_title_bar_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/pos_main_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/pos_main_window.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/utils/styles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/utils/ui_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/weight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/bill_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/bill_dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/product_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/product_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/custom_title_bar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/code reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/action_buttons.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/billing_list_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_list.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_section.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/billing/keypad.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/edit_product_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/edit_product_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/order_products_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/order_products_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/pos_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product_main_area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/pos/product_management_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product_management_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/styles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons_logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_keypad_logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_keypad_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_list_item.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_list_logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_list_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_section_logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/billing_section_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/custom_title_bar_logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/custom_title_bar_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/edit_product_dialog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/order_products_dialog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos_main_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos_main_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/product_management_dialog.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,22 +73,24 @@
     "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/FPOS/kpapython/kpa/utils",
+    "last_opened_file_path": "C:/FPOS/kpapython/kpa/utils/styles",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "com.sourcegraph.cody.config.ui.CodyConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\FPOS\kpapython\kpa\utils\styles" />
       <recent name="C:\FPOS\kpapython\kpa\utils" />
       <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\FPOS\kpapython\kpa\ui2" />
+      <recent name="C:\FPOS\kpapython\kpa\utils" />
       <recent name="C:\FPOS\kpapython\kpa\ui\utils" />
       <recent name="C:\FPOS\kpapython\kpa\ui" />
       <recent name="C:\FPOS\kpapython\kpa" />
-      <recent name="C:\FPOS\kpapython\kpa\ui\pos" />
-      <recent name="C:\FPOS\kpapython\kpa\ui\billing" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -483,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751885262747</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751976407562</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1751976407562</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -500,16 +488,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rf" />
     <option name="LAST_COMMIT_MESSAGE" value="rf" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ui/billing/action_buttons_logic.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
