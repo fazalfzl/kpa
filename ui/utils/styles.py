@@ -42,7 +42,7 @@ class GlobalStyles:
         QWidget {{
             font-family: 'Segoe UI', 'Ubuntu', sans-serif;
             font-size: 13px;
-            background-color: {ColorPalette.BASE_BG};
+            background-color: {ColorPalette.PRIMARY_LIGHT};
             color: {ColorPalette.TEXT};
         }}
         QPushButton {{
@@ -65,7 +65,7 @@ class GlobalStyles:
             background: transparent;
         }}
         QScrollBar::handle:vertical, QScrollBar::handle:horizontal {{
-            background-color: {ColorPalette.BORDER};
+            background-color: {ColorPalette.PRIMARY_LIGHT};
             border-radius: 6px;
             min-height: 20px;
             min-width: 20px;
