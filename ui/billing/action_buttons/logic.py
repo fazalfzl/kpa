@@ -3,7 +3,11 @@ from core.services.product_service import ProductService
 from utils.print_pkg.printer_config import PrinterTester
 
 from utils.logger import get_logger
+from PyQt5.QtCore import QTimer
+from utils.weight import weight_manager
+
 log = get_logger(__name__)
+
 
 class ActionButtonsLogic:
     def __init__(self):
@@ -14,6 +18,30 @@ class ActionButtonsLogic:
 
         self._update_total_label = lambda val: None  # safe no-op
         self._printer = None
+
+        self.weight_timer = QTimer()
+        self.weight_timer.timeout.connect(self._refresh_weight)
+        self.weight_timer.start(500)
+
+    def on_weight_button_clicked(self):
+        if not self.billing_list or not self.billing_list.selected_item_widget:
+            return
+
+        item = self.billing_list.selected_item_widget
+
+        self.billing_list.selected_field_name = "qty"
+        item.select_field("qty")
+        current_weight = weight_manager.get_weight()
+        item.item_data.qty = current_weight
+        item.qty_label.setText(f"Qty: {current_weight:.3f}")
+        item.amount_label.setText(f"₹{item.item_data.total():.2f}")
+
+        self.update_bill_amount()
+
+    def _refresh_weight(self):
+        if hasattr(self, 'weight_button'):
+            w = weight_manager.get_weight()
+            self.weight_button.setText(f"Weight: {w:.3f} kg")
 
     def set_billing_list(self, billing_list):
         self.billing_list = billing_list
@@ -51,7 +79,6 @@ class ActionButtonsLogic:
             item.select_field("qty")
             if hasattr(self.billing_list, 'keypad') and self.billing_list.keypad:
                 self.billing_list.keypad.reset_input()
-
 
     def process_bill(self):
         if not self.billing_list:
@@ -119,7 +146,6 @@ class ActionButtonsLogic:
 
     def set_total_updater(self, callback):
         self._update_total_label = callback
-
 
     def update_bill_amount(self):
         if self.billing_list and hasattr(self, 'bill_amount_label'):

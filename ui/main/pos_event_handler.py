@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QMessageBox
 from core.services.product_service import ProductService
+from utils.weight import weight_manager
 
 
 class POSEventHandler:
@@ -9,7 +10,12 @@ class POSEventHandler:
 
     def handle_product_click(self, product):
         if product:
-            self.billing_list.add_item(name=product.name, qty=1, price=product.price)
+            qty = 1
+            if product.unit == "kg":
+                w = weight_manager.get_weight()
+                # qty = weight() or 1  # fallback if sensor fails
+                qty = w or 1
+            self.billing_list.add_item(name=product.name, qty=qty, price=product.price)
 
     def handle_barcode(self, barcode):
         try:

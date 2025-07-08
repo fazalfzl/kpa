@@ -1,5 +1,5 @@
 
-
+from PyQt5.QtCore import QObject, pyqtSignal
 
 
 class BillingItemData:
@@ -10,8 +10,12 @@ class BillingItemData:
         return self.qty * self.price
 
 
-class BillingListLogic:
-    def __init__(self):
+
+class BillingListLogic(QObject):
+    bill_changed = pyqtSignal()
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
         self.customer_data = {f"C{i}": [] for i in range(1, 4)}
         self.item_counters = {f"C{i}": 1 for i in range(1, 4)}
         self.current_customer = "C1"
@@ -63,6 +67,7 @@ class BillingListLogic:
         self.customer_data[self.current_customer].append(item_data)
         self.item_counters[self.current_customer] += 1
         self.ui._add_item_to_display(item_data)
+        self.bill_changed.emit()  # 🔁 emit on add
 
     def remove_selected_item(self):
         if not self.selected_item_widget:
@@ -73,9 +78,11 @@ class BillingListLogic:
             item for item in self.customer_data[self.current_customer]
             if item.item_count != selected_id
         ]
+
         self._renumber_items()
         self.ui._display_current_customer_items()
         self._select_last_item()
+        self.bill_changed.emit()  # 🔁 emit on delete
 
     def _renumber_items(self):
         items = self.customer_data[self.current_customer]

@@ -9,7 +9,7 @@ from ui.utils.styles import BillingListStyles
 class BillingListWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.logic = BillingListLogic()
+        self.logic = BillingListLogic(self)
         self.logic.set_ui(self)
         self._selected_field_name = None
 

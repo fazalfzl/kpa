@@ -8,7 +8,7 @@ from ui.main.pos_main_ui import POSMainUI
 from ui.title_bar.logic import CustomTitleBarLogic
 from ui.main.pos_event_handler import POSEventHandler
 from utils.constants import DEFAULT_CATEGORY
-
+from utils.weight import weight_manager
 
 class POSMainController(POSMainUI):
     def __init__(self):
@@ -18,6 +18,7 @@ class POSMainController(POSMainUI):
         self.event_handler = POSEventHandler(self.billing_section.billing_list)
 
         self._connect_signals()
+        weight_manager.start()
 
     def _connect_signals(self):
         products_sec = self.main_content.products_sec

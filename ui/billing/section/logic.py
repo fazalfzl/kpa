@@ -45,6 +45,9 @@ class BillingSection:
         self.billing_list.set_keypad(self.keypad)
         self.action_buttons_logic.set_billing_list(self.billing_list)
         self.action_buttons_logic.set_billing_section(self)
+        self.billing_list.action_buttons_logic = self.action_buttons_logic
+
+        self.billing_list.logic.bill_changed.connect(self.action_buttons_logic.update_bill_amount)
 
     def _get_printer_instance(self):
         # Lazy init to avoid duplicate instances

@@ -62,7 +62,13 @@ class OrderProductsDialog(QDialog):
 
     def _move(self, direction):
         row = self.list_widget.currentRow()
+        if row == -1:
+            return  # No selection
+
         target = row + direction
         if 0 <= target < len(self.products):
-            self.service.reorder_products(self.products[row].id, self.products[target].id)  # Use ProductService
+            self.service.reorder_products(self.products[row].id, self.products[target].id)
             self._load_products()
+            # Restore selection after reload
+            new_row = row + direction
+            self.list_widget.setCurrentRow(new_row)

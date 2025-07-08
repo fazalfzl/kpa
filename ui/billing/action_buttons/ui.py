@@ -7,14 +7,13 @@ from ui.utils.styles import ActionButtonStyles, GlobalStyles
 from utils.constants import ACTION_BUTTON_WIDTH, ACTION_BUTTON_HEIGHT, BUTTON_SIZE
 
 
-
 class ActionButtonsUI:
     def __init__(self, logic: ActionButtonsLogic, update_label_cb):
         self.logic = logic
         self.update_label_cb = update_label_cb  # or directly set label here
 
         self.buttons = {}
-        self.weight_btn = None
+        self.weight_button = None
         self.bill_amount_label = None
 
     def set_billing_section(self, billing_section):
@@ -30,19 +29,28 @@ class ActionButtonsUI:
         if not isinstance(layout, QGridLayout):
             raise TypeError("Layout must be QGridLayout")
 
-        layout.addWidget(self._create_action_button("ADD ROW", self.logic.add_new_row, ActionButtonStyles.ADD_ROW_STYLE), 0, 0)
-        layout.addWidget(self._create_action_button("DELETE ROW", self.logic.remove_selected_item, ActionButtonStyles.DELETE_ROW_STYLE), 1, 0)
-        layout.addWidget(self._create_action_button("PRICE", self.logic.set_price_field, ActionButtonStyles.PRICE_STYLE), 1, 4)
-        layout.addWidget(self._create_action_button("QTY", self.logic.set_qty_field, ActionButtonStyles.QTY_STYLE), 0, 4)
+        layout.addWidget(
+            self._create_action_button("ADD ROW", self.logic.add_new_row, ActionButtonStyles.ADD_ROW_STYLE), 0, 0)
+        layout.addWidget(self._create_action_button("DELETE ROW", self.logic.remove_selected_item,
+                                                    ActionButtonStyles.DELETE_ROW_STYLE), 1, 0)
+        layout.addWidget(
+            self._create_action_button("PRICE", self.logic.set_price_field, ActionButtonStyles.PRICE_STYLE), 1, 4)
+        layout.addWidget(self._create_action_button("QTY", self.logic.set_qty_field, ActionButtonStyles.QTY_STYLE), 0,
+                         4)
 
-        self.weight_btn = self._create_weight_button()
-        layout.addWidget(self.weight_btn, 2, 4)
+        self.weight_button = self._create_weight_button()
+        self.logic.weight_button = self.weight_button
+        self.weight_button.clicked.connect(self.logic.on_weight_button_clicked)
+
+        layout.addWidget(self.weight_button, 2, 4)
 
         self.bill_amount_label = self._create_bill_amount_display()
         self.logic.bill_amount_label = self.bill_amount_label
         layout.addWidget(self.bill_amount_label, 2, 0)
 
-        layout.addWidget(self._create_action_button("BILL", self.logic.process_bill, ActionButtonStyles.BILL_BUTTON_STYLE, True), 3, 0)
+        layout.addWidget(
+            self._create_action_button("BILL", self.logic.process_bill, ActionButtonStyles.BILL_BUTTON_STYLE, True), 3,
+            0)
 
     def _create_action_button(self, text, handler, style, large_font=False):
         btn = QPushButton(text)

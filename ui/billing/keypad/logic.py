@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget
 
 from ui.billing.keypad.ui import BillingKeypadUI
+from ui.billing.action_buttons.logic import ActionButtonsLogic
 
 
 class BillingKeypad(QWidget):
@@ -32,6 +33,11 @@ class BillingKeypad(QWidget):
                 item.item_data.price = float(self.input_buffer)
                 item.price_label.setText(f"Price: ₹{item.item_data.price:.2f}")
             item.amount_label.setText(f"₹{item.item_data.total():.2f}")
+
+            # 🔁 live update total
+            if hasattr(self.billing_list, 'action_buttons_logic'):
+                self.billing_list.action_buttons_logic.update_bill_amount()
+
         except ValueError:
             pass
 

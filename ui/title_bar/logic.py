@@ -73,12 +73,6 @@ class CustomTitleBarLogic:
             ("➕ Create Product", self._open_create_product),
             ("↕️ Order Products", self._open_order_products),
             ("🛠️ Manage Products", self._open_product_management),
-            ("📁 File", lambda: log.info("File clicked")),
-            ("⚙️ Settings", lambda: log.info("Settings clicked")),
-            ("📊 Reports", lambda: log.info("Reports clicked")),
-            ("📦 Inventory", lambda: log.info("Inventory clicked")),
-            ("❓ Help", lambda: log.info("Help clicked")),
-            ("ℹ️ About", lambda: log.info("About clicked")),
             ("🖨️ Test Printer", self._test_printer)
         ]
 
