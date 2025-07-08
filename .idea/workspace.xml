@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos.db" beforeDir="false" afterPath="$PROJECT_DIR$/pos.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/billing_list/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/billing_list/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/billing_list/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/billing_list/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/keypad/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/keypad/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/section/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/section/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main/pos_event_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_event_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main/pos_main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_main_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/product/order_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product/order_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/title_bar/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/title_bar/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/styles/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/weight_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/styles/styles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/weight.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/weight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/main/pos_main_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_main_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751990882823</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751999024861</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1751999024861</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

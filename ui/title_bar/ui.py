@@ -90,14 +90,14 @@ class CustomTitleBar(QWidget):
         self.bill_input.setFixedSize(80, 30)  # Smaller width and height
         self.bill_input.setStyleSheet(BarcodeInputStyles.INPUT_STYLE)
         self.bill_input.returnPressed.connect(self.logic.on_load_bill)
-        layout.addWidget(self.bill_input)
+        # layout.addWidget(self.bill_input)
 
         self.load_bill_icon = QPushButton("📄")  # You can also use an icon via QIcon
         self.load_bill_icon.setFixedSize(30, 30)
         self.load_bill_icon.setFont(QFont(TITLE_BAR_FONT_FAMILY, 10))  # Small font for emoji
         self.load_bill_icon.setStyleSheet(TitleBarStyles.MENU_BUTTON_STYLE)
         self.load_bill_icon.clicked.connect(self.logic.on_load_bill)
-        layout.addWidget(self.load_bill_icon)
+        # layout.addWidget(self.load_bill_icon)
 
 
         return layout
