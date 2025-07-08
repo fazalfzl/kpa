@@ -12,6 +12,27 @@ class ColorPalette:
     PRESSED = "#cbd5e1"
 
 
+class ProductButtonStyles:
+    BUTTON_STYLE = f"""
+        QPushButton {{
+            background-color: {ColorPalette.PRIMARY_LIGHT};
+            border: 1px solid {ColorPalette.BORDER};
+            border-radius: 6px;
+            padding: 8px;
+            font-weight: bold;
+            color: {ColorPalette.TEXT};
+        }}
+        QPushButton:hover {{
+            background-color: {ColorPalette.HOVER};
+        }}
+        QPushButton:pressed {{
+            background-color: {ColorPalette.PRIMARY};
+            color: white;
+        }}
+    """
+
+
+
 class GlobalStyles:
     GLOBAL_STYLE = f"""
         QWidget {{
@@ -198,8 +219,7 @@ class TitleBarStyles:
     """
 
 
-class ProductButtonStyles:
-    BUTTON_STYLE = GlobalStyles.GLOBAL_STYLE
+
 
 
 class MainContentStyles:
