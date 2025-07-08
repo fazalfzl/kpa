@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from ui.pos_main_window import POSMainController  # 🆕 import the controller
+
+from ui.main.pos_main_controller import POSMainController
 
 
 def main():

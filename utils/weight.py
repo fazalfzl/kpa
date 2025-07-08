@@ -2,6 +2,9 @@ import platform
 import serial
 import glob
 
+from utils.logger import get_logger
+log = get_logger(__name__)
+
 def find_serial_port():
     if platform.system() == 'Linux':
         ports = glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*') + glob.glob('/dev/ttyS*')
@@ -17,7 +20,7 @@ def find_serial_port():
 def weight():
     serialport = find_serial_port()
     if serialport is None:
-        print("No valid serial port found")
+        log.info("No valid serial port found")
         return None  # Return None if no serial port is found
 
     try:
@@ -43,14 +46,14 @@ def weight():
                         serialport.flushInput()
                         return kilo  # Return the weight in kilograms
                     except Exception as e:
-                        print("Conversion error: " + str(e))
+                        log.info("Conversion error: " + str(e))
                         return None
             except Exception as e:
-                print("Exception in serial read loop: " + str(e))
+                log.info("Exception in serial read loop: " + str(e))
                 serialport.close()
                 return None
     except Exception as e:
-        print("Exception in weight thread: " + str(e))
+        log.info("Exception in weight thread: " + str(e))
         return None
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@ import usb.core
 import usb.util
 from time import sleep
 from escpos import printer
+from utils.logger import get_logger
+log = get_logger(__name__)
 
 USBTMC_bInterfaceClass = 7
 USBTMC_bInterfaceSubClass = 1
@@ -22,7 +24,7 @@ class PrinterTester:
 
     def initialize_printer(self, idVendor, idProduct, inputEndPoint, outputEndPoint):
         if self.is_printer_initialized():
-            print("✅ Printer is already initialized.")
+            log.info("✅ Printer is already initialized.")
             return
 
         try:
@@ -31,21 +33,14 @@ class PrinterTester:
                                  out_ep=int(outputEndPoint, 16))
             sleep(0.5)
             self.printer_initialized = True
-            print("✅ Printer initialized.")
+            log.info("✅ Printer initialized.")
         except Exception as e:
-            print("❌ Printer initialization failed:", e)
-
-    # def set(self, align='left', font='a', bold=False, underline=0, width=1,
-    #         height=1, density=9, invert=False, smooth=False, flip=False,
-    #         double_width=False, double_height=False, custom_size=False):
-    #    :param width: text width multiplier when custom_size is used, decimal range 1-8,  *default*: 1
-    #         :param height: text height multiplier when custom_size is used, decimal range 1-8, *default*: 1
-    #
+            log.info("❌ Printer initialization failed:", e)
 
     def print_receipt(self, receipt_content ,total):
         """Print the receipt with a bold header using ESC/POS commands."""
         if not self.is_printer_initialized():
-            print("❌ Printer is not initialized. Cannot print.")
+            log.info("❌ Printer is not initialized. Cannot print.")
             return
 
         try:
@@ -85,16 +80,16 @@ class PrinterTester:
 
             # Cut the paper
             self.p.cut()
-            print("✅ Receipt printed successfully with bold header in Font B.")
+            log.info("✅ Receipt printed successfully with bold header in Font B.")
         except Exception as e:
-            print(f"❌ Failed to print receipt: {e}")
+            log.exception(f"❌ Failed to print receipt: {e}")
 
 
     def stringtohex(self, strin):
         try:
             return hex(int(strin.strip(), 16))
         except Exception as e:
-            print("ERROR at stringtohex:", e)
+            log.exception("ERROR at stringtohex:", e)
             return None
 
     def list_devices(self):
@@ -106,26 +101,26 @@ class PrinterTester:
                                                  bInterfaceSubClass=USBTMC_bInterfaceSubClass)
                     return d is not None
             except Exception as e:
-                print("ERROR in is_usbtmc_device:", e)
+                log.exception("ERROR in is_usbtmc_device:", e)
                 return False
 
         try:
             return list(usb.core.find(find_all=True, custom_match=is_usbtmc_device))
         except Exception as e:
-            print("ERROR in list_devices:", e)
+            log.exception("ERROR in list_devices:", e)
             return []
 
     def test_printer(self):
         if not self.printer_initialized:
-            print("❌ Printer is not initialized.")
+            log.error("❌ Printer is not initialized.")
             return
 
         try:
             self.p.text("Hello World\n")
             self.p.cut()
-            print("✅ Hello World printed successfully.")
+            log.info("✅ Hello World printed successfully.")
         except Exception as e:
-            print("❌ Failed to print Hello World:", e)
+            log.error("❌ Failed to print Hello World:", e)
         finally:
             self.cleanup()
 
@@ -135,25 +130,25 @@ class PrinterTester:
             try:
                 self.p.close()
             except Exception as e:
-                print("⚠️ Error closing printer:", e)
+                log.error("⚠️Error closing printer:", e)
         if self.device:
             try:
                 usb.util.dispose_resources(self.device)
-                print("✅ USB resources released.")
+                log.info("✅ USB resources released.")
             except Exception as e:
-                print("⚠️ Error releasing USB resources:", e)
+                log.error("⚠️Error releasing USB resources:", e)
         self.p = None
         self.device = None
         self.printer_initialized = False
 
     def run(self):
         if platform.system() == 'Windows':
-            print("This script is for Linux (USB printer detection won't work on Windows).")
+            log.info("This script is for Linux (USB printer detection won't work on Windows).")
             return
 
         devices = self.list_devices()
         if not devices:
-            print("❌ No USB printer devices found.")
+            log.info("❌ No USB printer devices found.")
             return
 
         for dev in devices:
@@ -168,10 +163,10 @@ class PrinterTester:
                 inputEndPoint = self.stringtohex(invals)
                 outputEndPoint = self.stringtohex(outvals)
 
-                print(f"🖨️ Found USB device: Vendor={idVendor}, Product={idProduct}")
+                log.info(f"🖨️ Found USB device: Vendor={idVendor}, Product={idProduct}")
                 self.device = dev
                 self.initialize_printer(idVendor, idProduct, inputEndPoint, outputEndPoint)
                 if self.printer_initialized:
                     break
             except Exception as e:
-                print("⚠️ Error parsing device info:", e)
+                log.error("⚠️Error parsing device info:", e)

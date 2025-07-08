@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QFont, QIcon, QPixmap
 from PyQt5.QtWidgets import *
 
-from database.product_repository import ProductRepository
+from core.services.product_service import ProductService
 from utils.constants import (
     IMAGE_DIR, PRODUCTS_PER_ROW, PRODUCT_GRID_SPACING,
     PRODUCT_BUTTON_WIDTH, PRODUCT_BUTTON_HEIGHT, PRODUCT_ICON_SIZE,
@@ -16,7 +16,7 @@ from ui.utils.styles import ProductStyles, ProductButtonStyles, MainContentStyle
 
 class ProductsSection:
     def __init__(self):
-        self.dao = ProductRepository()
+        self.service = ProductService()
         self.container = self.scroll_area = None
         self.current_category = DEFAULT_CATEGORY
         self.on_product_click = None
@@ -54,7 +54,7 @@ class ProductsSection:
         grid = QGridLayout(holder)
         grid.setSpacing(PRODUCT_GRID_SPACING)
 
-        products = self.dao.get_by_category(self.current_category)
+        products = self.service.get_by_category(self.current_category)
         for idx, p in enumerate(products):
             btn = self._make_button(p)
             grid.addWidget(btn, idx // PRODUCTS_PER_ROW, idx % PRODUCTS_PER_ROW, Qt.AlignCenter)

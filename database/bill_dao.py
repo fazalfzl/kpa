@@ -3,7 +3,6 @@ from datetime import datetime
 
 from core.models.bill import Bill, BillItem
 from .db_manager import DBManager
-from database.product_repository import ProductRepository
 
 
 class BillDAO:
