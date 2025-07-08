@@ -4,7 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf" />
+    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
+      <change afterPath="$PROJECT_DIR$/core/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/models/bill.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/models/product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/folder structure creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/action_buttons_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/action_buttons_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_keypad_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_keypad_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_list_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_list_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_section_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/billing/billing_section_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/custom_title_bar_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/custom_title_bar_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/pos_main_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/pos_main_window.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/utils/styles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/utils/ui_helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/weight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/bill_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/bill_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/product_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/product_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/custom_title_bar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/code reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/action_buttons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/billing_list_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/billing_section.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/billing/keypad.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/edit_product_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/edit_product_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/order_products_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/order_products_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/pos_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product_main_area.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/pos/product_management_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product_management_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/styles.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,40 +75,89 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ChatTagsLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ClientConfigCleanupMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountHistoryMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountsIdsRefresh&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyConvertUrlToCodebaseName&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyHistoryLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyMigrateChatHistory-v2&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.DeprecatedChatLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/FPOS/kpapython/kpa&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.sourcegraph.cody.config.ui.CodyConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.code reader.executor": "Run",
+    "Python.folder structure creator.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ChatTagsLlmMigration": "true",
+    "RunOnceActivity.ClientConfigCleanupMigration": "true",
+    "RunOnceActivity.CodyAccountHistoryMigration": "true",
+    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
+    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.DeprecatedChatLlmMigration": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/FPOS/kpapython/kpa/utils",
+    "settings.editor.selected.configurable": "com.sourcegraph.cody.config.ui.CodyConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\utils" />
+      <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\FPOS\kpapython\kpa\ui\utils" />
+      <recent name="C:\FPOS\kpapython\kpa\ui" />
+      <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\ui\pos" />
       <recent name="C:\FPOS\kpapython\kpa\ui\billing" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="code reader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kpa" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="folder structure creator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kpa" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/folder structure creator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="kpa" />
       <option name="ENV_FILES" value="" />
@@ -90,6 +180,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.folder structure creator" />
+        <item itemvalue="Python.code reader" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -379,8 +475,27 @@
       <option name="project" value="LOCAL" />
       <updated>1751872679350</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751885262747</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1751885262747</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rf" />
@@ -390,8 +505,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ui/custom_title_bar.py</url>
-          <line>235</line>
+          <url>file://$PROJECT_DIR$/ui/billing/action_buttons_logic.py</url>
+          <line>61</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -2,9 +2,12 @@ from PyQt5.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QFont
 
+from ..utils.styles import BillingListItemStyles
+
+
 class BillingListItem(QFrame):
     item_clicked = pyqtSignal(object)
-    field_selected = pyqtSignal(object, str)
+    fieldFocused = pyqtSignal(object, str)
 
     def __init__(self, item_data, parent=None):
         super().__init__(parent)
@@ -26,22 +29,7 @@ class BillingListItem(QFrame):
         main_layout.addLayout(self._create_bottom_row())
 
     def _update_style(self):
-        style = """
-            QFrame {
-                border: 2px solid #4CAF50;
-                border-radius: 4px;
-                background-color: #f0f8f0;
-            }
-        """ if self.is_selected else """
-            QFrame {
-                border: 1px solid #999;
-                border-radius: 4px;
-                background-color: #fff;
-            }
-            QFrame:hover {
-                background-color: #f5f5f5;
-            }
-        """
+        style = BillingListItemStyles.SELECTED_STYLE if self.is_selected else BillingListItemStyles.DEFAULT_STYLE
         self.setStyleSheet(style)
 
     def set_selected(self, selected):
@@ -65,7 +53,7 @@ class BillingListItem(QFrame):
 
         count_label = self._create_label(
             f"#{self.item_data.item_count}", 9, QFont.Bold, "#666",
-            "background-color: #f0f0f0; border-radius: 3px; padding: 2px 4px;",
+            BillingListItemStyles.COUNT_LABEL_STYLE,
             Qt.AlignCenter
         )
         count_label.setFixedWidth(32)
@@ -101,23 +89,9 @@ class BillingListItem(QFrame):
         return layout
 
     def _update_field_highlight(self):
-        highlight_style = (
-            "color: #222;"
-            "background-color: #cceeff;"  # Bright visible highlight
-            "border: 2px solid #007acc;"  # Bold visible border
-            "border-radius: 3px;"
-        )
-
-        default_style = (
-            "color: #222;"
-            "background-color: #ffffff;"  # White background
-            "border: 1px solid #bbb;"  # Subtle but visible border
-            "border-radius: 3px;"
-        )
-
         field_styles = {
-            "qty": highlight_style if self.selected_field == "qty" else default_style,
-            "price": highlight_style if self.selected_field == "price" else default_style,
+            "qty": BillingListItemStyles.HIGHLIGHT_STYLE if self.selected_field == "qty" else BillingListItemStyles.DEFAULT_FIELD_STYLE,
+            "price": BillingListItemStyles.HIGHLIGHT_STYLE if self.selected_field == "price" else BillingListItemStyles.DEFAULT_FIELD_STYLE,
         }
 
         self.qty_label.setStyleSheet(field_styles["qty"])
@@ -127,5 +101,5 @@ class BillingListItem(QFrame):
         if field_name in ("qty", "price"):
             self.selected_field = field_name
             self._update_field_highlight()
-            self.field_selected.emit(self, field_name)
+            self.fieldFocused.emit(self, field_name)
 

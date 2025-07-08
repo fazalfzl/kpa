@@ -4,9 +4,12 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon, QFont, QPixmap
-from ui.pos.edit_product_dialog import ProductEditorDialog
-from database.product_dao import ProductDAO
+from ui.edit_product_dialog import ProductEditorDialog
+from database.product_repository import ProductRepository
 import os
+
+from ui.utils.styles import GlobalStyles
+
 
 IMAGE_DIR = os.path.join(os.getcwd(), "product_images")
 PRODUCT_ICON_SIZE = 128
@@ -17,7 +20,7 @@ class ProductManagementDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Product Management")
-        self.dao = ProductDAO()
+        self.dao = ProductRepository()
         self.tabs = {}
         self.selected_btn = None
         self.selected_product = None
@@ -85,7 +88,7 @@ class ProductManagementDialog(QDialog):
         btn.setText(f"{product.name}\n₹{product.price:.2f}")
         btn.setFont(QFont("Arial", 9, QFont.Bold))
         btn.setCheckable(True)
-        btn.setStyleSheet("QToolButton:checked { border: 2px solid #0078d7; background-color: #e6f2ff; }")
+        btn.setStyleSheet(GlobalStyles.GLOBAL_STYLE)
         btn.clicked.connect(lambda: self._select_product(btn, product))
         return btn
 

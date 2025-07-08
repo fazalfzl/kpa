@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import *
-from database.product_dao import ProductDAO
+from database.product_repository import ProductRepository
 
 class OrderProductsDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Order Products")
-        self.dao, self.current_category, self.products = ProductDAO(), "fruits_veg", []
+        self.dao, self.current_category, self.products = ProductRepository(), "fruits_veg", []
         self._build_ui()
         self._load_products()
 

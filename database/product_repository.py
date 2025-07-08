@@ -1,28 +1,9 @@
 from sqlite3 import Row
+
+from core.models.product import Product
 from .db_manager import DBManager
 
-class Product:
-    def __init__(
-        self,
-        id: int,
-        name: str,
-        price: float,
-        barcode: str,
-        unit: str,
-        image_path: str,
-        order_index: int,
-        category: str,
-    ):
-        self.id = id
-        self.name = name
-        self.price = price
-        self.barcode = barcode
-        self.unit = unit
-        self.image_path = image_path
-        self.order_index = order_index
-        self.category = category
-
-class ProductDAO:
+class ProductRepository:
     def __init__(self, db_path: str = "pos.db"):
         self.conn = DBManager.get_instance(db_path).get_connection()
 

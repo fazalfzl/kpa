@@ -1,23 +1,10 @@
 from sqlite3 import Row
 from datetime import datetime
+
+from core.models.bill import Bill, BillItem
 from .db_manager import DBManager
-from database.product_dao import ProductDAO
+from database.product_repository import ProductRepository
 
-class BillItem:
-    def __init__(self, id:int, bill_id:int, product_id:int, quantity:float, price:float):
-        self.id = id
-        self.bill_id = bill_id
-        self.product_id = product_id
-        self.quantity = quantity
-        self.price = price
-
-class Bill:
-    def __init__(self, id:int, customer_id:str, date:str, total:float):
-        self.id = id
-        self.customer_id = customer_id
-        self.date = date
-        self.total = total
-        self.items: list[BillItem] = []
 
 class BillDAO:
     def __init__(self, db_path: str = "pos.db"):

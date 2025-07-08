@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtCore import QSize, Qt
 
-from database.product_dao import ProductDAO
+from database.product_repository import ProductRepository
 
 # store thumbnails here
 IMAGE_DIR = os.path.join(os.getcwd(), "product_images")
@@ -143,7 +143,7 @@ class ProductEditorDialog(QDialog):
         cat_label = display_labels[checked_id]
         category = self._category_map.get(cat_label, "barcode_only")
 
-        dao = ProductDAO()
+        dao = ProductRepository()
         try:
             if self.existing_product:
                 dao.update(
