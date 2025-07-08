@@ -15,7 +15,7 @@ class ColorPalette:
 class ProductButtonStyles:
     BUTTON_STYLE = f"""
         QToolButton {{
-            background-color: {ColorPalette.PRIMARY_LIGHT};
+            background-color: {ColorPalette.PRIMARY};
             border: 5px solid {ColorPalette.PRIMARY};
             border-radius: 6px;
             padding: 8px;
