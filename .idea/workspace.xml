@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main/pos_main_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_main_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/utils/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils/styles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -465,7 +464,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751999024861</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751999635975</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1751999635975</updated>
+    </task>
+    <task id="LOCAL-00042" summary="rf">
+      <option name="closed" value="true" />
+      <created>1751999862033</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1751999862033</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

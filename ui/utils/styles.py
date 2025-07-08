@@ -14,18 +14,18 @@ class ColorPalette:
 
 class ProductButtonStyles:
     BUTTON_STYLE = f"""
-        QPushButton {{
+        QToolButton {{
             background-color: {ColorPalette.PRIMARY_LIGHT};
-            border: 1px solid {ColorPalette.BORDER};
+            border: 5px solid {ColorPalette.PRIMARY};
             border-radius: 6px;
             padding: 8px;
             font-weight: bold;
             color: {ColorPalette.TEXT};
         }}
-        QPushButton:hover {{
+        QToolButton:hover {{
             background-color: {ColorPalette.HOVER};
         }}
-        QPushButton:pressed {{
+        QToolButton:pressed {{
             background-color: {ColorPalette.PRIMARY};
             color: white;
         }}
