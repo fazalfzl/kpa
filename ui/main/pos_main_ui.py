@@ -1,6 +1,6 @@
 # pos_main_ui.py
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QDesktopWidget
 from PyQt5.QtCore import Qt
 
 from ui.billing.section.logic import BillingSection
@@ -22,8 +22,13 @@ class POSMainUI(QWidget):
 
     def _setup_ui(self):
         self.setWindowTitle("My POS System")
+
         self.setWindowFlags(Qt.FramelessWindowHint)
-        self.showFullScreen()
+
+        # Get screen size and resize window accordingly
+        screen_rect = QDesktopWidget().availableGeometry()
+        self.setGeometry(screen_rect)
+
 
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(0, 0, 0, 0)
