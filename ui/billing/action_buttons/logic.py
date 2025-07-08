@@ -41,7 +41,7 @@ class ActionButtonsLogic:
     def _refresh_weight(self):
         if hasattr(self, 'weight_button'):
             w = weight_manager.get_weight()
-            self.weight_button.setText(f"Weight: {w:.3f} kg")
+            self.weight_button.setText(f"{w:.3f}")
 
     def set_billing_list(self, billing_list):
         self.billing_list = billing_list
@@ -150,7 +150,7 @@ class ActionButtonsLogic:
     def update_bill_amount(self):
         if self.billing_list and hasattr(self, 'bill_amount_label'):
             total = self.billing_list.get_current_customer_total()
-            self._update_total_label(f"BILL AMOUNT\n{total:.2f}")
+            self._update_total_label(f"{total:.2f}")
 
     def set_printer(self, printer):
         self._printer = printer

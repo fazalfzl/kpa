@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/utils/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils/styles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,30 +146,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751467317307</updated>
-    </task>
-    <task id="LOCAL-00002" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751825151162</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1751825151162</updated>
-    </task>
-    <task id="LOCAL-00003" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751825252634</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1751825252634</updated>
-    </task>
-    <task id="LOCAL-00004" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751826718391</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1751826718391</updated>
     </task>
     <task id="LOCAL-00005" summary="rf">
       <option name="closed" value="true" />
@@ -536,7 +515,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752001984301</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752002166036</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1752002166036</updated>
+    </task>
+    <task id="LOCAL-00052" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752002327298</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1752002327298</updated>
+    </task>
+    <task id="LOCAL-00053" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752002503873</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1752002503873</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -3,7 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 
 from ui.billing.action_buttons.logic import ActionButtonsLogic
-from ui.utils.styles import ActionButtonStyles, GlobalStyles
+from ui.utils.styles import ActionButtonStyles, GlobalStyles, WeightButtonStyles
 from utils.constants import ACTION_BUTTON_WIDTH, ACTION_BUTTON_HEIGHT, BUTTON_SIZE
 
 
@@ -30,8 +30,8 @@ class ActionButtonsUI:
             raise TypeError("Layout must be QGridLayout")
 
         layout.addWidget(
-            self._create_action_button("ADD ROW", self.logic.add_new_row, ActionButtonStyles.ADD_ROW_STYLE), 0, 0)
-        layout.addWidget(self._create_action_button("DELETE ROW", self.logic.remove_selected_item,
+            self._create_action_button("ROW +", self.logic.add_new_row, ActionButtonStyles.ADD_ROW_STYLE), 0, 0)
+        layout.addWidget(self._create_action_button("ROW -", self.logic.remove_selected_item,
                                                     ActionButtonStyles.DELETE_ROW_STYLE), 1, 0)
         layout.addWidget(
             self._create_action_button("PRICE", self.logic.set_price_field, ActionButtonStyles.PRICE_STYLE), 1, 4)
@@ -65,12 +65,12 @@ class ActionButtonsUI:
     def _create_weight_button(self):
         btn = QPushButton("Weight: 0.00 kg")
         btn.setFont(QFont("Arial", 10, QFont.Bold))
-        btn.setStyleSheet(GlobalStyles.GLOBAL_STYLE)
+        btn.setStyleSheet(WeightButtonStyles.BUTTON_STYLE )
         btn.setFixedSize(ACTION_BUTTON_WIDTH, BUTTON_SIZE)
         return btn
 
     def _create_bill_amount_display(self):
-        label = QLabel("BILL AMOUNT\n0.00")
+        label = QLabel("0.00")
         label.setAlignment(Qt.AlignCenter)
         label.setFont(QFont("Arial", 10, QFont.Bold))
         label.setStyleSheet(ActionButtonStyles.BILL_AMOUNT_STYLE)

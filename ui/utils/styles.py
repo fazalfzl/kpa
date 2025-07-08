@@ -35,6 +35,26 @@ class ProductButtonStyles:
     """
 
 
+# weight button style , black bg, red text , font big bold that looks like a digital display
+class WeightButtonStyles:
+    BUTTON_STYLE = f"""
+        QPushButton {{
+            background-color: #1e1e2e;
+            border: 2px solid #1e1e2e;
+            border-radius: 6px;
+            padding: 8px;
+            font-weight: bold;
+            font-size: {PRODUCT_BUTTON_FONT_SIZE}px;
+            color: #fff;
+        }}
+        QPushButton:hover {{
+            background-color: {ColorPalette.HOVER};
+        }}
+        QPushButton:pressed {{
+            background-color: {ColorPalette.PRIMARY};
+            color: white;
+        }}
+    """
 
 
 class GlobalStyles:
@@ -161,7 +181,13 @@ class ActionButtonStyles:
     DELETE_ROW_STYLE = "background-color: #ef4444; color: white;"
     PRICE_STYLE = "background-color: #3b82f6; color: white;"
     QTY_STYLE = "background-color: #8b5cf6; color: white;"
-    BILL_AMOUNT_STYLE = f"color: {ColorPalette.TEXT}; border: none; padding: 5px; font-weight: bold;"
+    BILL_AMOUNT_STYLE = (f"""
+    color: green;
+    border: none; 
+    padding: 5px; 
+    font-weight: bold;
+    font-size: 18px;
+    """)
     BILL_BUTTON_STYLE = GlobalStyles.GLOBAL_STYLE
 
 
@@ -222,9 +248,6 @@ class TitleBarStyles:
             margin: 5px 10px;
         }}
     """
-
-
-
 
 
 class MainContentStyles:
