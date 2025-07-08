@@ -68,12 +68,14 @@ class ProductsSection:
         btn.setFixedSize(PRODUCT_BUTTON_WIDTH, PRODUCT_BUTTON_HEIGHT)
         btn.setIcon(self._load_icon(product))
         btn.setIconSize(QSize(PRODUCT_ICON_SIZE, PRODUCT_ICON_SIZE))
-        btn.setText(f"{product.name}\n${product.price:.2f}")
+        btn.setText(f"{product.name}\n₹{product.price:.2f}")
         btn.setFont(QFont(PRODUCT_BUTTON_FONT_FAMILY, PRODUCT_BUTTON_FONT_SIZE, QFont.Bold))
         btn.setCursor(Qt.PointingHandCursor)
         btn.setStyleSheet(ProductButtonStyles.BUTTON_STYLE)
         btn.clicked.connect(lambda _, p=product: self._on_click(p))
         return btn
+
+    # rupee  symbol
 
     def _load_icon(self, product):
         if product.image_path:

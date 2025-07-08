@@ -52,7 +52,7 @@ class OrderProductsDialog(QDialog):
     def _load_products(self):
         self.list_widget.clear()
         self.products = self.service.get_by_category(self.current_category)  # Use ProductService
-        [self.list_widget.addItem(f"{p.name} (${p.price:.2f})") for p in self.products]
+        [self.list_widget.addItem(f"{p.name} (₹{p.price:.2f})") for p in self.products]
 
     def _move_up(self):
         self._move(-1)
