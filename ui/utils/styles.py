@@ -1,5 +1,5 @@
 # utils/styles.py (refactored with light futuristic theme)
-from utils.constants import PRODUCT_BUTTON_FONT_FAMILY, PRODUCT_BUTTON_FONT_SIZE
+from utils.constants import PRODUCT_BUTTON_FONT_SIZE
 
 
 class ColorPalette:
@@ -22,8 +22,7 @@ class ProductButtonStyles:
             border-radius: 6px;
             padding: 8px;
             font-weight: bold;
-            font-family: {PRODUCT_BUTTON_FONT_FAMILY};
-            font-size: {PRODUCT_BUTTON_FONT_SIZE};
+            font-size: {PRODUCT_BUTTON_FONT_SIZE}px;
             color: {ColorPalette.TEXT};
         }}
         QToolButton:hover {{
@@ -34,6 +33,7 @@ class ProductButtonStyles:
             color: white;
         }}
     """
+
 
 
 
