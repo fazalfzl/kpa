@@ -12,7 +12,6 @@ from ui.utils.styles import TitleBarStyles, CategoryButtonStyles, BarcodeInputSt
 
 class CustomTitleBar(QWidget):
     show_category = pyqtSignal(str)
-    barcode_scanned = pyqtSignal(str)
     load_bill = pyqtSignal(int)
 
     def __init__(self, logic, parent=None):
@@ -76,13 +75,6 @@ class CustomTitleBar(QWidget):
         self.manual_btn.clicked.connect(lambda: self.show_category.emit("manual"))
         layout.addWidget(self.manual_btn)
 
-        self.barcode_input = QLineEdit()
-        self.barcode_input.setPlaceholderText(BARCODE_PLACEHOLDER)
-        self.barcode_input.setFixedSize(BARCODE_INPUT_WIDTH, BARCODE_INPUT_HEIGHT)
-        self.barcode_input.setStyleSheet(BarcodeInputStyles.INPUT_STYLE)
-        self.barcode_input.returnPressed.connect(self.logic.on_barcode_entered)
-        layout.addWidget(self.barcode_input)
-
         self.logic.add_last_bill_buttons(layout)
 
         self.bill_input = QLineEdit()
@@ -90,15 +82,14 @@ class CustomTitleBar(QWidget):
         self.bill_input.setFixedSize(80, 30)  # Smaller width and height
         self.bill_input.setStyleSheet(BarcodeInputStyles.INPUT_STYLE)
         self.bill_input.returnPressed.connect(self.logic.on_load_bill)
-        # layout.addWidget(self.bill_input)
+        layout.addWidget(self.bill_input)
 
         self.load_bill_icon = QPushButton("📄")  # You can also use an icon via QIcon
         self.load_bill_icon.setFixedSize(30, 30)
         self.load_bill_icon.setFont(QFont(TITLE_BAR_FONT_FAMILY, 10))  # Small font for emoji
         self.load_bill_icon.setStyleSheet(TitleBarStyles.MENU_BUTTON_STYLE)
         self.load_bill_icon.clicked.connect(self.logic.on_load_bill)
-        # layout.addWidget(self.load_bill_icon)
-
+        layout.addWidget(self.load_bill_icon)
 
         return layout
 

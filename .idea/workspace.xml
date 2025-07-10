@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
+      <change afterPath="$PROJECT_DIR$/wetest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cody_project_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/code reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos.db" beforeDir="false" afterPath="$PROJECT_DIR$/pos.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/utils/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils/styles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/main/pos_main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_main_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/product/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/title_bar/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/title_bar/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/weight_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/weight_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +52,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Python.code reader.executor&quot;: &quot;Run&quot;,
     &quot;Python.folder structure creator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gifconverter.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ChatTagsLlmMigration&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ClientConfigCleanupMigration&quot;: &quot;true&quot;,
@@ -60,16 +69,16 @@
     &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/FPOS/kpapython/kpa/utils/styles&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/FPOS/kpapython/kpa&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\utils\styles" />
       <recent name="C:\FPOS\kpapython\kpa\utils" />
-      <recent name="C:\FPOS\kpapython\kpa" />
       <recent name="C:\FPOS\kpapython\kpa\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -103,6 +112,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="gifconverter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kpa" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gifconverter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="kpa" />
       <option name="ENV_FILES" value="" />
@@ -128,6 +159,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.code reader" />
+        <item itemvalue="Python.gifconverter" />
       </list>
     </recent_temporary>
   </component>
@@ -146,30 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751467317307</updated>
-    </task>
-    <task id="LOCAL-00005" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751829063648</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1751829063648</updated>
-    </task>
-    <task id="LOCAL-00006" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751864622946</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1751864622946</updated>
-    </task>
-    <task id="LOCAL-00007" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751865010880</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1751865010880</updated>
     </task>
     <task id="LOCAL-00008" summary="rf">
       <option name="closed" value="true" />
@@ -539,7 +547,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752002503873</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752003326830</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1752003326831</updated>
+    </task>
+    <task id="LOCAL-00055" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752004253658</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1752004253658</updated>
+    </task>
+    <task id="LOCAL-00056" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752008234552</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1752008234553</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

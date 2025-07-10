@@ -10,6 +10,7 @@ from utils.print_pkg.printer_config import PrinterTester
 from ui.utils.styles import TitleBarStyles
 
 from utils.logger import get_logger
+
 log = get_logger(__name__)
 
 
@@ -58,12 +59,6 @@ class CustomTitleBarLogic:
         bill_id = self.ui.sender().property("bill_id")
         if bill_id:
             self.ui.load_bill.emit(bill_id)
-
-    def on_barcode_entered(self):
-        barcode = self.ui.barcode_input.text().strip()
-        if barcode:
-            self.ui.barcode_scanned.emit(barcode)
-            self.ui.barcode_input.clear()
 
     def show_menu(self):
         menu = QMenu(self.ui)

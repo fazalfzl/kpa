@@ -6,7 +6,7 @@ def write_python_files_to_text(base_dir, output_file):
             # Exclude the .venv folder
             dirs[:] = [d for d in dirs if d != '.venv']
             for file in files:
-                if file.endswith('.py') and file != '__init__.py' and file != 'code reader.py':
+                if file.endswith('.py') and file != '__init__.py' and file != 'code reader.py' and file != 'gifconverter.py':
                     file_path = os.path.join(root, file)
                     out_file.write(f"Path: {file_path}\n")
                     out_file.write("-" * 80 + "\n")

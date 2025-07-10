@@ -20,12 +20,20 @@ class POSMainController(POSMainUI):
         self._connect_signals()
         weight_manager.start()
 
+        self.action_barcode_input = self.billing_section.action_buttons_ui.barcode_input
+        self.action_barcode_input.returnPressed.connect(self._handle_barcode_input)
+
+    def _handle_barcode_input(self):
+        barcode = self.action_barcode_input.text().strip()
+        if barcode:
+            self.event_handler.handle_barcode(barcode)
+            self.action_barcode_input.clear()
+
     def _connect_signals(self):
         products_sec = self.main_content.products_sec
 
         products_sec.on_product_click = self.event_handler.handle_product_click
         self.title_bar.show_category.connect(self._on_category_changed)
-        self.title_bar.barcode_scanned.connect(self.event_handler.handle_barcode)
         self.title_bar.load_bill.connect(self.billing_section.load_bill)
 
         products_sec.set_category(DEFAULT_CATEGORY)

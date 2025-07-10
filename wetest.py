@@ -43,6 +43,7 @@ class WeightManager:
         for port in port_paths:
             try:
                 serialport = serial.Serial(port, 2400, timeout=1)
+                print(f"✅ Connected to serial port: {port}")
                 break
             except Exception:
                 continue
@@ -69,3 +70,17 @@ class WeightManager:
             print(f"❌ Serial read error: {e}")
         finally:
             serialport.close()
+
+
+if __name__ == "__main__":
+    wm = WeightManager()
+    wm.start()
+
+    try:
+        while True:
+            weight = wm.get_weight()
+            print(f"Current Weight: {weight:.3f} kg", end='\r')
+            time.sleep(0.5)
+    except KeyboardInterrupt:
+        print("\n👋 Exiting...")
+        wm.stop()

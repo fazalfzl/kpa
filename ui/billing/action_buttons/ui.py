@@ -5,7 +5,7 @@ from PyQt5.QtGui import QFont
 from ui.billing.action_buttons.logic import ActionButtonsLogic
 from ui.utils.styles import ActionButtonStyles, GlobalStyles, WeightButtonStyles
 from utils.constants import ACTION_BUTTON_WIDTH, ACTION_BUTTON_HEIGHT, BUTTON_SIZE
-
+from PyQt5.QtWidgets import QLineEdit
 
 class ActionButtonsUI:
     def __init__(self, logic: ActionButtonsLogic, update_label_cb):
@@ -15,6 +15,8 @@ class ActionButtonsUI:
         self.buttons = {}
         self.weight_button = None
         self.bill_amount_label = None
+
+        # self.barcode_input = None  # Add this
 
     def set_billing_section(self, billing_section):
         self.logic.set_billing_section(billing_section)
@@ -43,6 +45,13 @@ class ActionButtonsUI:
         self.weight_button.clicked.connect(self.logic.on_weight_button_clicked)
 
         layout.addWidget(self.weight_button, 2, 4)
+
+        layout.addWidget(self.weight_button, 2, 4)
+
+        self.barcode_input = QLineEdit()
+        self.barcode_input.setPlaceholderText("Scan Barcode")
+        layout.addWidget(self.barcode_input, 3, 4)  # Adjust row as needed
+
 
         self.bill_amount_label = self._create_bill_amount_display()
         self.logic.bill_amount_label = self.bill_amount_label

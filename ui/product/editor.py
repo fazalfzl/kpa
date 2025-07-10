@@ -125,7 +125,8 @@ class ProductEditorDialog(QDialog):
         price_txt = self.price_edit.text().strip()
         barcode = self.barcode_edit.text().strip() or None
         unit = self.unit_edit.currentText()
-        image_filename = self.new_image_filename or None
+        image_filename = self.new_image_filename or (
+            self.existing_product.image_path if self.existing_product else None)
 
         if not name or not price_txt:
             QMessageBox.warning(self, "Input Error", "Name and Price are required.")
