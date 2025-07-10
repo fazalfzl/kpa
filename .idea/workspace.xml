@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
-      <change afterPath="$PROJECT_DIR$/wetest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cody_project_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/code reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos.db" beforeDir="false" afterPath="$PROJECT_DIR$/pos.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main/pos_main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main/pos_main_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/product/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/title_bar/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/title_bar/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/weight_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/weight_manager.py" afterDir="false" />
-    </list>
+    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,22 +165,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751467317307</updated>
-    </task>
-    <task id="LOCAL-00008" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751865345755</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1751865345755</updated>
-    </task>
-    <task id="LOCAL-00009" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751865880610</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1751865880610</updated>
     </task>
     <task id="LOCAL-00010" summary="rf">
       <option name="closed" value="true" />
@@ -571,7 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752008234553</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752132835798</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1752132835799</updated>
+    </task>
+    <task id="LOCAL-00058" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752133118090</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1752133118090</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
