@@ -222,6 +222,7 @@ class ProductManagementDialog(QDialog):
         filtered = [p for p in self.service.get_by_category(tab["category"]) if text in p.name.lower() or text in p.barcode]
         self._load_grid(tab, filtered)
 
+
     def _clear_search(self, tab):
         tab["search_field"].clear()
         self._load_grid(tab)
