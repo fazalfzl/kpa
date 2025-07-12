@@ -116,7 +116,7 @@ class ProductManagementDialog(QDialog):
         clear_btn = QPushButton("Clear")
 
         search_field.setPlaceholderText("Search products...")
-        search_field.textChanged.connect(lambda: self._filter_products(tab))
+        # search_field.textChanged.connect(lambda: self._filter_products(tab))
 
         search_layout.addWidget(search_field)
         search_layout.addWidget(search_btn)

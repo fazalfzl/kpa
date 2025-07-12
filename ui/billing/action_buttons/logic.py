@@ -55,7 +55,7 @@ class ActionButtonsLogic:
     def add_new_row(self):
         if not self.billing_list:
             return
-        self.billing_list.add_item("New Item", 1, 5.00)
+        self.billing_list.add_item("New Item", 1, 1.00)
         self.update_bill_amount()
 
     def remove_selected_item(self):
