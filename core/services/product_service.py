@@ -27,8 +27,9 @@ class ProductService:
     def get_by_name(self, name: str) -> Product | None:
         return self.repo.get_by_name(name)
 
-    def get_by_category(self, category: str) -> list[Product]:
-        return self.repo.get_by_category(category)
+    def get_by_category(self, category):
+        result = self.repo.get_by_category(category)  # or however it's implemented
+        return result if result is not None else []
 
     def reorder_products(self, id1: int, id2: int):
         self.repo.swap_order(id1, id2)

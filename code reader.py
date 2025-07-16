@@ -15,7 +15,7 @@ def write_python_files_to_text(base_dir, output_file):
                     out_file.write("\n" + "=" * 80 + "\n\n")
 
 # Replace 'your_codebase_directory' with the path to your codebase
-base_directory = 'C:\FPOS\kpapython\kpa'
+base_directory = '/home/fazal/PycharmProjects/kpa'
 output_file_path = 'output.txt'
 
 write_python_files_to_text(base_directory, output_file_path)
