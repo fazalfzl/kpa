@@ -12,7 +12,7 @@ def main():
     splash_pix = QPixmap("assets/splash.png")
     splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
     splash.setWindowFlag(Qt.FramelessWindowHint)
-    splash.show()
+    # splash.show()
     app.processEvents()
 
     # Delayed function to load the heavy window
