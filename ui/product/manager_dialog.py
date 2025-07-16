@@ -215,14 +215,23 @@ class ProductManagementDialog(QDialog):
                 return i
         return -1
 
+
     def _filter_products(self, tab):
         text = tab["search_field"].text().strip().lower()
-        # filtered = [p for p in self.service.get_by_category(tab["category"]) if text in p.name.lower()]
-        # i want to also look for the barcode
         products = self.service.get_by_category(tab["category"]) or []
-        filtered = [p for p in products if text in p.name.lower() or text in p.barcode]
-        self._load_grid(tab, filtered)
 
+        filtered = []
+        for p in products:
+            if not p:
+                continue  # skip None entries
+
+            name = (p.name or "").lower()
+            barcode = p.barcode or ""
+
+            if text in name or text in barcode:
+                filtered.append(p)
+
+        self._load_grid(tab, filtered)
 
     def _clear_search(self, tab):
         tab["search_field"].clear()
