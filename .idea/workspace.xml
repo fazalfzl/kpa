@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf" />
+    <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos.db" beforeDir="false" afterPath="$PROJECT_DIR$/pos.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +105,7 @@
       <recent name="C:\FPOS\kpapython\kpa\ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.code reader">
+  <component name="RunManager" selected="Python.main">
     <configuration name="code reader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="kpa" />
       <option name="ENV_FILES" value="" />
@@ -237,14 +240,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751467317307</updated>
-    </task>
-    <task id="LOCAL-00018" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751869587757</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1751869587757</updated>
     </task>
     <task id="LOCAL-00019" summary="rf">
       <option name="closed" value="true" />
@@ -630,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752681031241</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="rf">
+      <option name="closed" value="true" />
+      <created>1752681723542</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1752681723542</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

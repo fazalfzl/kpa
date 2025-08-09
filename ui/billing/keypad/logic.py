@@ -27,7 +27,7 @@ class BillingKeypad(QWidget):
             return
         try:
             if field == "qty":
-                item.item_data.qty = int(self.input_buffer)
+                item.item_data.qty = float(self.input_buffer)
                 item.qty_label.setText(f"Qty: {item.item_data.qty}")
             elif field == "price":
                 item.item_data.price = float(self.input_buffer)
