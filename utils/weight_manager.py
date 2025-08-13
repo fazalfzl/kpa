@@ -29,6 +29,7 @@ class WeightManager:
 
     def _weight_loop(self):
         if platform.system() == 'Windows':
+            return
             while self._running:
                 fake_weight = round(random.uniform(1.000, 10.000), 3)
                 self._update_weight(fake_weight)
