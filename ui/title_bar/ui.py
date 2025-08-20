@@ -76,7 +76,7 @@ class CustomTitleBar(QWidget):
         layout.addWidget(self.manual_btn)
 
         # add the following to enable last bill viewing in pos sccreen
-        # self.logic.add_last_bill_buttons(layout)
+        self.logic.add_last_bill_buttons(layout)
 
         self.bill_input = QLineEdit()
         self.bill_input.setPlaceholderText("ID")
