@@ -68,7 +68,8 @@ class CustomTitleBarLogic:
             ("➕ Create Product", self._open_create_product),
             ("↕️ Order Products", self._open_order_products),
             ("🛠️ Manage Products", self._open_product_management),
-            ("🖨️ Test Printer", self._test_printer)
+            ("🖨️ Test Printer", self._test_printer),
+            ("📊 Report", self._open_report_page)
         ]
 
         for text, func in items:
@@ -80,6 +81,11 @@ class CustomTitleBarLogic:
 
         pos = self.ui.menu_btn.mapToGlobal(QPoint(0, self.ui.menu_btn.height()))
         menu.exec_(pos)
+
+    def _open_report_page(self):
+        from ui.report.report_dialog import ReportDialog
+        dlg = ReportDialog(self.parent)
+        dlg.exec_()
 
     def _test_printer(self):
         tester = PrinterTester()
