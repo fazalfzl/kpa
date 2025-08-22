@@ -123,9 +123,16 @@ class CustomTitleBarLogic:
             self.parent.close()
 
     def open_cash_drawer(self):
-        printer_tester = PrinterTester()
-        if printer_tester.is_printer_initialized():
-            printer_tester.p._raw(b'\x1B\x70\x00\x19\xFA')
-            log.info("✅ Cash drawer opened from title bar button.")
-        else:
-            log.info("❌ Printer not initialized. Cannot open cash drawer.")
+        try:
+            tester = PrinterTester()
+            tester.run()
+            if tester.is_printer_initialized():
+                # ESC/POS command to open cash drawer
+                tester.p._raw(b'\x1B\x70\x00\x19\xFA')
+                log.info("✅ Cash drawer open command sent.")
+                tester.cleanup()
+            else:
+                QMessageBox.warning(self.ui, "Printer Error", "Printer not initialized. Cannot open cash drawer.")
+        except Exception as e:
+            log.exception(f"❌ Failed to open cash drawer: {e}")
+            QMessageBox.critical(self.ui, "Error", f"Failed to open cash drawer: {e}")

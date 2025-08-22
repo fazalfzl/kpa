@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rfs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/title_bar/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/title_bar/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,15 +273,7 @@
       <workItem from="1755700835673" duration="413000" />
       <workItem from="1755768578034" duration="196000" />
       <workItem from="1755768866714" duration="927000" />
-      <workItem from="1755837872851" duration="2152000" />
-    </task>
-    <task id="LOCAL-00025" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751870328673</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1751870328673</updated>
+      <workItem from="1755837872851" duration="2573000" />
     </task>
     <task id="LOCAL-00026" summary="rf">
       <option name="closed" value="true" />
@@ -669,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755839606377</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="rfs">
+      <option name="closed" value="true" />
+      <created>1755840201617</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1755840201617</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,6 +691,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="rfs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kpa$main.coverage" NAME="main Coverage Results" MODIFIED="1755769703554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kpa$main.coverage" NAME="main Coverage Results" MODIFIED="1755840570953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
