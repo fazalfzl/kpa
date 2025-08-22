@@ -25,6 +25,20 @@ class ActionButtonsLogic:
         self.weight_timer.timeout.connect(self._refresh_weight)
         self.weight_timer.start(500)
 
+    def open_cash_drawer(self):
+        if not self._printer:
+            log.info("❌ Printer not initialized. Cannot open cash drawer.")
+            return
+
+
+        try:
+            if not self.printer_tester.is_printer_initialized():
+                self.printer_tester.run()
+            self.printer_tester.open_cash_drawer()
+            log.info("✅ Cash drawer opened successfully.")
+        except Exception as e:
+            log.error(f"❌ Failed to open cash drawer: {e}")
+
     def on_weight_button_clicked(self):
         if not self.billing_list or not self.billing_list.selected_item_widget:
             return

@@ -41,8 +41,9 @@ class ActionButtonsUI:
                          4)
 
         self.weight_button = self._create_weight_button()
+
         self.logic.weight_button = self.weight_button
-        self.weight_button.clicked.connect(self.logic.on_weight_button_clicked)
+        self.weight_button.clicked.connect(self.logic.open_cash_drawer)
 
         layout.addWidget(self.weight_button, 2, 4)
 

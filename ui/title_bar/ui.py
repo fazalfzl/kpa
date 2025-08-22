@@ -92,22 +92,11 @@ class CustomTitleBar(QWidget):
         self.load_bill_icon.clicked.connect(self.logic.on_load_bill)
         layout.addWidget(self.load_bill_icon)
 
-
-        self.cash_drawer_btn = QPushButton("💵")  # Or use an icon
-        self.cash_drawer_btn.setFixedSize(WINDOW_CONTROL_BUTTON_SIZE, WINDOW_CONTROL_BUTTON_SIZE)
-        self.cash_drawer_btn.setFont(QFont(TITLE_BAR_FONT_FAMILY, WINDOW_CONTROL_FONT_SIZE, QFont.Bold))
-        self.cash_drawer_btn.setStyleSheet(TitleBarStyles.MINIMIZE_BUTTON_STYLE)  # Or a custom style
-        self.cash_drawer_btn.setToolTip("Open Cash Drawer")
-        self.cash_drawer_btn.clicked.connect(self.logic.open_cash_drawer)
-        layout.addWidget(self.cash_drawer_btn)
-
         return layout
 
     def _create_right(self):
         layout = QHBoxLayout()
         layout.setSpacing(5)
-
-
 
         self.minimize_btn = QPushButton("−")
         self.minimize_btn.setFixedSize(WINDOW_CONTROL_BUTTON_SIZE, WINDOW_CONTROL_BUTTON_SIZE)
@@ -129,7 +118,6 @@ class CustomTitleBar(QWidget):
         self.close_btn.setStyleSheet(TitleBarStyles.CLOSE_BUTTON_STYLE)
         self.close_btn.clicked.connect(self.logic.close_application)
         layout.addWidget(self.close_btn)
-
 
         return layout
 
