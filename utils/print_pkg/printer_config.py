@@ -82,6 +82,10 @@ class PrinterTester:
             # Cut the paper
             self.p.cut()
             log.info("✅ Receipt printed successfully with bold header in Font B.")
+            self.p._raw(b'\x1B\x70\x00\x19\xFA')
+            self.p.cashdraw(2)
+            sleep(1)
+            log.info("✅ Cash drawer opened.")
         except Exception as e:
             log.exception(f"❌ Failed to print receipt: {e}")
 

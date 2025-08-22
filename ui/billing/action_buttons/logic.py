@@ -1,3 +1,5 @@
+import textwrap
+
 from core.services.bill_service import BillService
 from core.services.product_service import ProductService
 from utils.print_pkg.printer_config import PrinterTester
@@ -122,13 +124,22 @@ class ActionButtonsLogic:
         receipt_lines.append("-" * max_character)
 
         for idx, item in enumerate(items, start=1):
-            name = item.item_name[:max_name_length]
+            name_lines = textwrap.wrap(item.item_name, max_name_length) or [""]
             price = f"{item.price:.2f}"[:max_price_length]
             qty = f"{item.qty}"[:max_qty_length]
             amount = f"{item.total():.2f}"[:max_amt_length]
-            receipt_lines.append(
-                f"{idx:<4}{name:<{max_name_length}}{price:<{max_price_length}}"
-                f"{qty:<{max_qty_length}}{amount:<{max_amt_length}}")
+            for i, line in enumerate(name_lines):
+                if i == len(name_lines) - 1:
+                    # Last line: print all fields
+                    receipt_lines.append(
+                        f"{idx:<4}{line:<{max_name_length}}{price:<{max_price_length}}"
+                        f"{qty:<{max_qty_length}}{amount:<{max_amt_length}}"
+                    )
+                else:
+                    # Continuation line: indent, only name
+                    receipt_lines.append(
+                        f"{'':<4}{line:<{max_name_length}}"
+                    )
 
         receipt_lines.append("-" * max_character)
         receipt_content = "\n".join(receipt_lines)
