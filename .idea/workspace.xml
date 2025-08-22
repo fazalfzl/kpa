@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b5275c9-6e13-4a7a-a6f8-101243ed0f62" name="Changes" comment="rfs">
-      <change beforePath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/billing/action_buttons/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/title_bar/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/title_bar/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/title_bar/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/print_pkg/printer_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,23 +275,7 @@
       <workItem from="1755700835673" duration="413000" />
       <workItem from="1755768578034" duration="196000" />
       <workItem from="1755768866714" duration="927000" />
-      <workItem from="1755837872851" duration="765000" />
-    </task>
-    <task id="LOCAL-00023" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751870096908</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1751870096908</updated>
-    </task>
-    <task id="LOCAL-00024" summary="rf">
-      <option name="closed" value="true" />
-      <created>1751870149902</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1751870149902</updated>
+      <workItem from="1755837872851" duration="2152000" />
     </task>
     <task id="LOCAL-00025" summary="rf">
       <option name="closed" value="true" />
@@ -667,7 +653,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755838028640</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="rfs">
+      <option name="closed" value="true" />
+      <created>1755838806865</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1755838806865</updated>
+    </task>
+    <task id="LOCAL-00073" summary="rfs">
+      <option name="closed" value="true" />
+      <created>1755839606377</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1755839606377</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

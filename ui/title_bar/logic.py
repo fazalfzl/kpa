@@ -121,3 +121,11 @@ class CustomTitleBarLogic:
     def close_application(self):
         if self.parent:
             self.parent.close()
+
+    def open_cash_drawer(self):
+        printer_tester = PrinterTester()
+        if printer_tester.is_printer_initialized():
+            printer_tester.p._raw(b'\x1B\x70\x00\x19\xFA')
+            log.info("✅ Cash drawer opened from title bar button.")
+        else:
+            log.info("❌ Printer not initialized. Cannot open cash drawer.")
