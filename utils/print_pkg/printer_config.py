@@ -67,8 +67,8 @@ class PrinterTester:
             self.p._raw(b'\x1B\x40')  # Reset printer
             self.p._raw(b'\x1b\x45\x00')  # Disable bold
             self.p._raw(b'\x1b\x61\x00')  # Align left
-            self.p._raw(b'\x1b\x21\x10')  # Font A, no double width, double height
-
+            # self.p._raw(b'\x1b\x21\x10')  # Font A, no double width, double height
+            self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
             # Print the rest of the receipt
             self.p.text(receipt_content + "\n")
 
