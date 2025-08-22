@@ -78,6 +78,12 @@ class PrinterTester:
             self.p._raw(b'\x1b\x61\x01')  # Align center
             self.p._raw(b'\x1b\x21\x31')  # Font B, double width, double height
             self.p.text(f"TOTAL: {total:.2f}\n")
+            # Reset to normal text style
+            self.p._raw(b'\x1b\x21\x00')  # Font A, no double width, no double height
+            self.p._raw(b'\x1b\x45\x00')  # Disable bold
+            # thank you , visit again
+            self.p._raw(b'\x1b\x61\x01')  # Align center
+            self.p.text("Thank you for your visit!\n")
 
             # Cut the paper
             self.p.cut()
