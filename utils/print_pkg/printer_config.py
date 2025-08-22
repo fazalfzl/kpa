@@ -1,6 +1,7 @@
 import platform
 from datetime import datetime
 
+from escpos.printer import Usb
 import usb.core
 import usb.util
 from time import sleep
@@ -144,6 +145,23 @@ class PrinterTester:
     def run(self):
         if platform.system() == 'Windows':
             log.info("This script is for Linux (USB printer detection won't work on Windows).")
+            # Output Endpoint Address: 0x1
+            # Input Endpoint Address: 0x81
+            vendor_id = self.stringtohex("0x0483")
+            product_id = self.stringtohex("0x5743")
+            in_ep = self.stringtohex("0x81")  # IN endpoint
+            out_ep = self.stringtohex("0x1")  # OUT endpoint
+
+            VENDOR_ID = 0x0483  # Example Epson printer
+            PRODUCT_ID = 0x5743  # Example Epson printer
+            self.device = Usb(VENDOR_ID, PRODUCT_ID)
+
+            if self.device is None:
+                log.info("❌ USB printer not found.")
+                return
+
+            self.initialize_printer(vendor_id, product_id, in_ep, out_ep)
+
             return
 
         devices = self.list_devices()
