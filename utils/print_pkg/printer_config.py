@@ -87,8 +87,8 @@ class PrinterTester:
             log.exception(f"❌ Failed to print receipt: {e}")
 
     def open_cash_drawer(self):
-        if self.printer_tester.is_printer_initialized():
-            self.printer_tester.p._raw(b'\x1B\x70\x00\x19\xFA')
+        if self.is_printer_initialized():
+            self.p._raw(b'\x1B\x70\x00\x19\xFA')
             log.info("✅ Cash drawer opened from title bar button.")
         else:
             log.info("❌ Printer not initialized. Cannot open cash drawer.")
